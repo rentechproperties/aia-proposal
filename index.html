@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeuroBridge Africa · Ability Inclusion Alliance | Mastercard Foundation Fellowship 2026</title>
+    <title>NeuroBridge Africa · Ability Inclusion Alliance | Applying for Mastercard Foundation Fellowship 2026</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="NeuroBridge Africa: Inclusive EdTech for neurodivergent and deaf learners. Women-led, Kenya-registered charity. Mastercard Foundation EdTech Fellowship applicant.">
+    <meta name="description" content="NeuroBridge Africa: Inclusive EdTech for neurodivergent and deaf learners. Women-led, Kenya-registered charity. Applying for Mastercard Foundation EdTech Fellowship.">
     <meta name="keywords" content="inclusive education, neurodivergent, deaf learners, KSL, EdTech Kenya, disability inclusion, Mastercard Foundation">
     <meta name="author" content="Ability Inclusion Alliance">
     
     <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="NeuroBridge Africa - Education Without Barriers">
-    <meta property="og:description" content="Building digital bridges for neurodivergent and deaf learners across Africa. Mastercard Foundation Fellowship 2026.">
+    <meta property="og:title" content="NeuroBridge Africa - We're Applying for the Mastercard Foundation Fellowship">
+    <meta property="og:description" content="Building digital bridges for neurodivergent and deaf learners across Africa. Help us win the Mastercard Foundation Fellowship 2026.">
     <meta property="og:image" content="https://neurobridge.africa/social-preview.jpg">
     <meta property="og:url" content="https://neurobridge.africa">
     <meta property="og:type" content="website">
@@ -256,24 +256,29 @@
             display: flex;
             gap: 0.5rem;
             margin-bottom: 1.5rem;
+            flex-wrap: wrap;
         }
         
         .hero-badge {
             background: var(--mcf-orange);
             color: white;
-            padding: 0.25rem 1rem;
+            padding: 0.5rem 1.2rem;
             border-radius: 100px;
-            font-size: 0.875rem;
+            font-size: 0.9rem;
             font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
         .hero-badge-outline {
             border: 2px solid var(--mcf-orange);
             color: var(--mcf-orange);
-            padding: 0.25rem 1rem;
+            padding: 0.5rem 1.2rem;
             border-radius: 100px;
-            font-size: 0.875rem;
+            font-size: 0.9rem;
             font-weight: 600;
+            background: rgba(255,255,255,0.9);
         }
         
         .hero-title {
@@ -321,6 +326,25 @@
             color: var(--mcf-dark-gray);
             font-size: 0.875rem;
             font-weight: 500;
+        }
+        
+        .applicant-statement {
+            background: var(--mcf-warm-white);
+            padding: 2rem;
+            border-radius: 16px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--mcf-orange);
+        }
+        
+        .applicant-statement p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
         
         .credibility-badges {
@@ -377,6 +401,42 @@
             border-radius: 50%;
             bottom: -100px;
             left: -100px;
+        }
+        
+        /* ===== STATUS BANNER ===== */
+        .status-banner {
+            background: var(--mcf-black);
+            color: white;
+            padding: 1rem 0;
+            border-bottom: 3px solid var(--mcf-orange);
+        }
+        
+        .status-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            background: var(--mcf-orange);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+            100% { opacity: 1; transform: scale(1); }
         }
         
         /* ===== STATS SECTION ===== */
@@ -512,6 +572,15 @@
         }
         
         /* ===== PILOT SECTION ===== */
+        .pilot-note {
+            background: var(--mcf-orange);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+        
         .pilot-timeline {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -620,6 +689,13 @@
             justify-content: center;
             font-weight: 700;
             color: var(--mcf-black);
+        }
+        
+        .budget-note {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+            margin-top: 0.5rem;
+            font-style: italic;
         }
         
         /* ===== TESTIMONIALS ===== */
@@ -871,6 +947,11 @@
             .hero-stats {
                 grid-template-columns: repeat(2, 1fr);
             }
+            
+            .status-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
@@ -882,7 +963,7 @@
                 <div class="logo-icon">NB</div>
                 <div class="logo-text">
                     NeuroBridge Africa
-                    <span class="logo-badge">MCF Fellowship 2026</span>
+                    <span class="logo-badge">Applying · MCF Fellowship 2026</span>
                 </div>
             </div>
             
@@ -891,18 +972,39 @@
                 <a href="#solution" class="nav-link">Solution</a>
                 <a href="#pilot" class="nav-link">Pilot</a>
                 <a href="#team" class="nav-link">Team</a>
-                <a href="#contact" class="btn btn-primary">Partner With Us <i class="fas fa-arrow-right"></i></a>
+                <a href="#contact" class="btn btn-primary">Support Our Application <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section (SLIDE 1 & 2) -->
+    <!-- Application Status Banner (NEW) -->
+    <div class="status-banner">
+        <div class="container status-content">
+            <div class="status-item">
+                <span class="status-dot"></span>
+                <span><strong>Application Status:</strong> IN PROGRESS · Cohort 4</span>
+            </div>
+            <div class="status-item">
+                <i class="fas fa-tag" style="color: var(--mcf-orange);"></i>
+                <span><strong>Theme:</strong> Learners with Disabilities</span>
+            </div>
+            <div class="status-item">
+                <i class="far fa-calendar" style="color: var(--mcf-orange);"></i>
+                <span><strong>Deadline:</strong> April 10, 2026 · 11:59PM EAT</span>
+            </div>
+            <div class="status-item">
+                <span>Stage: <strong style="color: var(--mcf-orange);">Assessment → Evaluation → Interview</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-grid">
             <div>
                 <div class="hero-tag">
-                    <span class="hero-badge">Mastercard Foundation Fellow '26</span>
-                    <span class="hero-badge-outline">iHub Kenya</span>
+                    <span class="hero-badge"><i class="fas fa-trophy"></i> Fellowship Applicant · Mastercard Foundation × iHUB Kenya · Cohort 4</span>
+                    <span class="hero-badge-outline">Apply by April 10, 2026</span>
                 </div>
                 <h1 class="hero-title">
                     NeuroBridge <span class="gradient-text">Africa</span>
@@ -930,6 +1032,16 @@
                     </div>
                 </div>
                 
+                <!-- Applicant Statement Box (NEW) -->
+                <div class="applicant-statement">
+                    <p><strong>We are applying for the Mastercard Foundation EdTech Fellowship Kenya Cohort 4, hosted by iHUB Kenya</strong> — a $100,000 equity-free grant and 18-month incubation programme for early-stage inclusive EdTech startups in Kenya.</p>
+                    <p>NeuroBridge Africa is our solution. We need your support to build it.</p>
+                    <div class="button-group">
+                        <a href="#" class="btn btn-primary"><i class="fas fa-handshake"></i> Support Our Application</a>
+                        <a href="#" class="btn btn-outline"><i class="fas fa-external-link-alt"></i> View the Fellowship</a>
+                    </div>
+                </div>
+                
                 <div class="credibility-badges">
                     <span class="badge"><i class="fas fa-check-circle"></i> Women-led CBO</span>
                     <span class="badge"><i class="fas fa-check-circle"></i> Kenya-registered</span>
@@ -952,7 +1064,41 @@
         </div>
     </section>
 
-    <!-- The Problem Section (SLIDE 3) -->
+    <!-- NEW SECTION: The Fellowship We're Applying For -->
+    <section style="padding: 4rem 0; background: var(--mcf-warm-white);">
+        <div class="container">
+            <h2 style="font-size: 2.2rem; margin-bottom: 1rem;">About the Fellowship We're Applying For</h2>
+            <p style="color: var(--mcf-mid-gray); font-size: 1.1rem; max-width: 800px; margin-bottom: 2rem;">The Mastercard Foundation EdTech Fellowship is Kenya's most prestigious inclusive EdTech grant programme, run by iHUB Kenya.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
+                <div style="background: white; padding: 1.5rem; border-radius: 12px; text-align: center;">
+                    <div style="font-size: 2rem; color: var(--mcf-orange); margin-bottom: 0.5rem;">$100K</div>
+                    <p style="font-weight: 600;">Equity-free funding</p>
+                </div>
+                <div style="background: white; padding: 1.5rem; border-radius: 12px; text-align: center;">
+                    <div style="font-size: 2rem; color: var(--mcf-orange); margin-bottom: 0.5rem;">18mo</div>
+                    <p style="font-weight: 600;">Incubation + scale support</p>
+                </div>
+                <div style="background: white; padding: 1.5rem; border-radius: 12px; text-align: center;">
+                    <div style="font-size: 2rem; color: var(--mcf-orange); margin-bottom: 0.5rem;">🎓</div>
+                    <p style="font-weight: 600;">Expert mentorship</p>
+                </div>
+                <div style="background: white; padding: 1.5rem; border-radius: 12px; text-align: center;">
+                    <div style="font-size: 2rem; color: var(--mcf-orange); margin-bottom: 0.5rem;">🌍</div>
+                    <p style="font-weight: 600;">Investor network access</p>
+                </div>
+            </div>
+            
+            <p style="font-weight: 600; margin-bottom: 1rem;">This year's theme: <span style="color: var(--mcf-orange);">Solutions for Learners Living with Disabilities</span>. That is exactly what NeuroBridge Africa is built for.</p>
+            
+            <div class="button-group" style="margin-top: 2rem;">
+                <a href="#" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Learn About the Fellowship</a>
+                <a href="#" class="btn btn-outline"><i class="fas fa-calendar-alt"></i> Register for iHUB Info Session</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Problem Section -->
     <section id="problem" style="padding: 5rem 0;">
         <div class="container">
             <h2 class="section-title" style="font-size: 2.5rem; margin-bottom: 1rem;">The Scale of Exclusion</h2>
@@ -989,11 +1135,15 @@
         </div>
     </section>
 
-    <!-- Who We Are (SLIDE 4) -->
+    <!-- Who We Are (with added applicant context) -->
     <section class="dark-section" style="padding: 5rem 0;">
         <div class="container">
             <h2 style="font-size: 2.5rem; color: white; margin-bottom: 1rem;">Ability Inclusion Alliance</h2>
-            <p style="color: rgba(255,255,255,0.8); font-size: 1.25rem; max-width: 600px; margin-bottom: 3rem;">Women-led. Expert-founded. Community-rooted.</p>
+            <p style="color: rgba(255,255,255,0.8); font-size: 1.25rem; margin-bottom: 2rem;">Women-led. Expert-founded. Community-rooted.</p>
+            
+            <div style="background: rgba(255,255,255,0.15); padding: 2rem; border-radius: 16px; margin-bottom: 2rem;">
+                <p style="color: white; font-size: 1.1rem;">Ability Inclusion Alliance is the organisation behind NeuroBridge Africa. We are a <strong>Kenya-registered, women-led charity founded in April 2025 in Nairobi</strong>. We are applying to the Mastercard Foundation EdTech Fellowship to fund and scale NeuroBridge Africa — our flagship inclusive EdTech platform for children with disabilities.</p>
+            </div>
             
             <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem;">
                 <div>
@@ -1013,7 +1163,7 @@
         </div>
     </section>
 
-    <!-- The Solution - 6 Modules (SLIDE 5-8) -->
+    <!-- The Solution - 6 Modules -->
     <section id="solution" style="padding: 5rem 0;">
         <div class="container">
             <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Introducing <span class="gradient-text">NeuroBridge Africa</span></h2>
@@ -1103,9 +1253,13 @@
         </div>
     </section>
 
-    <!-- Pilot Project (SLIDE 9) -->
+    <!-- Pilot Project (with fellowship context) -->
     <section id="pilot" style="padding: 5rem 0; background: var(--mcf-warm-white);">
         <div class="container">
+            <div class="pilot-note">
+                <i class="fas fa-info-circle"></i> Our pilot plan is a core requirement of the Mastercard Foundation EdTech Fellowship application. It demonstrates that NeuroBridge Africa is not just an idea — it is a real, deployable solution with confirmed partners and a clear implementation plan.
+            </div>
+            
             <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Nairobi Inclusive Learning Pilot 2026</h2>
             <p style="color: var(--mcf-mid-gray); font-size: 1.25rem; margin-bottom: 2rem;">30 learners. 8 weeks. Proof of impact.</p>
             
@@ -1176,7 +1330,7 @@
         </div>
     </section>
 
-    <!-- Impact Metrics (SLIDE 10) -->
+    <!-- Impact Metrics -->
     <section style="padding: 5rem 0;">
         <div class="container">
             <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Measuring What Matters</h2>
@@ -1221,7 +1375,7 @@
         </div>
     </section>
 
-    <!-- Scale Pathway (SLIDE 11) -->
+    <!-- Scale Pathway -->
     <section class="dark-section" style="padding: 5rem 0;">
         <div class="container">
             <h2 style="font-size: 2.5rem; color: white; margin-bottom: 2rem;">From Pilot to Pan-African</h2>
@@ -1246,7 +1400,7 @@
         </div>
     </section>
 
-    <!-- Testimonials (SLIDE 12) -->
+    <!-- Testimonials -->
     <section style="padding: 5rem 0;">
         <div class="container">
             <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">In Their Own Words</h2>
@@ -1276,7 +1430,7 @@
         </div>
     </section>
 
-    <!-- The Team (SLIDE 13) -->
+    <!-- The Team -->
     <section id="team" style="padding: 5rem 0; background: var(--mcf-warm-white);">
         <div class="container">
             <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Founded by Experts. Driven by Mission.</h2>
@@ -1315,10 +1469,10 @@
         </div>
     </section>
 
-    <!-- Why Us (SLIDE 14) -->
+    <!-- Why Us - Updated Headline -->
     <section style="padding: 5rem 0;">
         <div class="container">
-            <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Four things no other applicant can say</h2>
+            <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Why the Mastercard Foundation Should Choose NeuroBridge Africa</h2>
             
             <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
                 <div style="background: var(--mcf-warm-white); padding: 2rem; border-radius: 16px; border-left: 4px solid var(--mcf-orange);">
@@ -1341,11 +1495,21 @@
         </div>
     </section>
 
-    <!-- The Ask & Budget (SLIDE 15) -->
+    <!-- NEW SECTION: Why This Matters Now -->
+    <section style="padding: 4rem 0; background: var(--mcf-orange); color: white;">
+        <div class="container" style="text-align: center;">
+            <h2 style="font-size: 2.5rem; color: white; margin-bottom: 1.5rem;">The Window Is Now</h2>
+            <p style="font-size: 1.25rem; max-width: 800px; margin: 0 auto 2rem;">Only 15% of Kenyan EdTech platforms are accessible. The Mastercard Foundation is investing in the solutions that change this. NeuroBridge Africa is ready. Our team is built. Our partners are confirmed. Our pilot plan is complete.</p>
+            <p style="font-size: 1.25rem; font-weight: 600;">We are not waiting to be discovered. We are building — and we are asking for the partnership to build faster, reach further, and prove that inclusive EdTech works in Kenya.</p>
+        </div>
+    </section>
+
+    <!-- The Ask & Budget - FIXED to show we're applying FOR funding -->
     <section class="dark-section" style="padding: 5rem 0;">
         <div class="container">
-            <h2 style="font-size: 3rem; color: white; margin-bottom: 1rem;">$100,000 Equity-Free</h2>
-            <p style="color: rgba(255,255,255,0.8); font-size: 1.25rem; margin-bottom: 2rem;">Mastercard Foundation EdTech Fellowship Kenya Cohort 4</p>
+            <h2 style="font-size: 3rem; color: white; margin-bottom: 1rem;">We Are Applying For $100,000 to Build This</h2>
+            <p style="color: rgba(255,255,255,0.8); font-size: 1.25rem; margin-bottom: 1rem;">The Mastercard Foundation EdTech Fellowship Kenya Cohort 4 offers $100,000 equity-free funding + 18-month incubation. We are one of the applicants.</p>
+            <p style="color: var(--mcf-orange); font-weight: 600; margin-bottom: 2rem;">If selected, here is our proposed budget:</p>
             
             <div class="budget-grid">
                 <div class="donut-container">
@@ -1373,21 +1537,29 @@
             </div>
             
             <div style="text-align: center; margin-top: 3rem;">
-                <p style="color: white; font-size: 1.25rem; margin-bottom: 1rem;">Apply by April 10, 2026 · 11:59PM EAT</p>
-                <a href="#" class="btn btn-primary" style="font-size: 1.25rem; padding: 1rem 3rem;">Apply Now <i class="fas fa-arrow-right"></i></a>
+                <p style="color: white; font-size: 1.1rem; margin-bottom: 1.5rem;">Deadline: April 10, 2026 · 11:59PM EAT</p>
+                <div class="button-group" style="justify-content: center;">
+                    <a href="#" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;"><i class="fas fa-external-link-alt"></i> View the Fellowship Programme</a>
+                    <a href="#" class="btn btn-outline" style="background: transparent; border-color: white; color: white; font-size: 1.1rem; padding: 1rem 2rem;"><i class="fas fa-heart"></i> Support Our Application</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- FAQ Section - Added new FAQ at top -->
     <section style="padding: 5rem 0;">
         <div class="container">
             <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Frequently Asked Questions</h2>
             
             <div class="faq-grid">
+                <!-- NEW FAQ -->
+                <div class="faq-item">
+                    <div class="faq-q">"What is the Mastercard Foundation EdTech Fellowship?"</div>
+                    <div class="faq-a">The Mastercard Foundation EdTech Fellowship is a $100,000 equity-free funding programme run by iHUB Kenya in partnership with the Mastercard Foundation. It supports early-stage EdTech startups in Kenya working on inclusive education. We are applying for Cohort 4. The deadline is April 10, 2026.</div>
+                </div>
                 <div class="faq-item">
                     <div class="faq-q">"You only have 30 learners — how will you scale?"</div>
-                    <div class="faq-a">Our pilot is evidence-building. With funding, we'll reach 500+ learners in Year 2 through 20 partner schools and government integration. Our tech is built for low-bandwidth, mass deployment.</div>
+                    <div class="faq-a">Our pilot is evidence-building. With fellowship funding, we'll reach 500+ learners in Year 2 through 20 partner schools and government integration. Our tech is built for low-bandwidth, mass deployment.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-q">"What makes you different from other EdTech?"</div>
@@ -1401,17 +1573,27 @@
                     <div class="faq-q">"What's your sustainability plan?"</div>
                     <div class="faq-a">Government partnerships (inclusion in CBC), B2B with special schools, and low-cost caregiver subscriptions. 70% self-sustaining by Year 3.</div>
                 </div>
+                <div class="faq-item">
+                    <div class="faq-q">"How can I support your application?"</div>
+                    <div class="faq-a">Letters of support from schools, NGOs, and community organisations strengthen our fellowship application. Contact us at info@abilityinclusionalliance.org for a template.</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section (SLIDE 16) -->
+    <!-- Contact Section - UPDATED with support messaging -->
     <section id="contact" style="padding: 5rem 0; background: var(--mcf-gradient); color: white;">
         <div class="container" style="text-align: center;">
-            <h2 style="font-size: 3rem; color: white; margin-bottom: 1rem;">Let's Build This Together</h2>
-            <p style="font-size: 1.25rem; margin-bottom: 3rem; opacity: 0.9;">Inclusion is not a dream. It's our mission.</p>
+            <h2 style="font-size: 3rem; color: white; margin-bottom: 1rem;">Support Our Mission — Help Us Win This Fellowship</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9;">We are applying to the Mastercard Foundation EdTech Fellowship Kenya Cohort 4. If you are a funder, partner, school, or organisation who believes in what we are building — we would love to hear from you. Every connection, endorsement, and partnership strengthens our application and our mission.</p>
             
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 800px; margin: 0 auto;">
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 16px; margin-bottom: 2rem;">
+                <h3 style="color: white; margin-bottom: 1rem;">Can You Support Our Application?</h3>
+                <p style="margin-bottom: 1.5rem;">Letters of support from schools, NGOs, government bodies, and community organisations strengthen our fellowship application. If you work in disability inclusion, education, or community development in Kenya — we would be honoured to have your endorsement.</p>
+                <a href="#" class="btn" style="background: white; color: var(--mcf-black); padding: 1rem 2rem;"><i class="fas fa-file-alt"></i> Request a Support Letter Template</a>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 800px; margin: 2rem auto;">
                 <div>
                     <div style="font-size: 2rem; margin-bottom: 0.5rem;">🌐</div>
                     <p>abilityinclusionalliance.org</p>
@@ -1426,19 +1608,20 @@
                 </div>
             </div>
             
-            <div style="margin-top: 3rem;">
-                <a href="#" class="btn" style="background: white; color: var(--mcf-black); padding: 1rem 2rem;">WhatsApp Us <i class="fab fa-whatsapp"></i></a>
+            <div class="button-group" style="justify-content: center; margin-top: 2rem;">
+                <a href="#" class="btn" style="background: white; color: var(--mcf-black); padding: 1rem 2rem;"><i class="fas fa-external-link-alt"></i> View the MCF Fellowship</a>
+                <a href="#" class="btn btn-outline" style="background: transparent; border-color: white; color: white; padding: 1rem 2rem;"><i class="fas fa-pen"></i> Write Us a Letter of Support</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer - UPDATED with correct applicant language -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div>
                     <div class="footer-logo">NeuroBridge Africa</div>
-                    <p style="color: rgba(255,255,255,0.8); margin: 1rem 0;">A project of Ability Inclusion Alliance — women-led, Kenya-registered charity.</p>
+                    <p style="color: rgba(255,255,255,0.8); margin: 1rem 0;">A project of Ability Inclusion Alliance — women-led, Kenya-registered charity. Proud applicant for the Mastercard Foundation EdTech Fellowship.</p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
@@ -1458,12 +1641,12 @@
                 </div>
                 
                 <div>
-                    <h4 style="color: white; margin-bottom: 1rem;">For Funders</h4>
+                    <h4 style="color: white; margin-bottom: 1rem;">For Supporters</h4>
                     <div class="footer-links">
                         <a href="#" class="footer-link">Investment Deck</a>
                         <a href="#" class="footer-link">Financial Reports</a>
                         <a href="#" class="footer-link">Theory of Change</a>
-                        <a href="#" class="footer-link">Use of Funds</a>
+                        <a href="#" class="footer-link">Letter of Support Template</a>
                     </div>
                 </div>
                 
@@ -1480,8 +1663,7 @@
             
             <div class="footer-bottom">
                 <p>© 2026 NeuroBridge Africa · Ability Inclusion Alliance. All rights reserved. Designed by NeuroBridge Team</p>
-                <p style="margin-top: 0.5rem;">Mastercard Foundation EdTech Fellowship Applicant · iHub Kenya Cohort 4</p>
-                <p style="margin-top: 0.5rem;">Deadline: April 10, 2026 · 11:59PM EAT</p>
+                <p style="margin-top: 0.5rem;"><strong>Proud Applicant</strong> — Mastercard Foundation EdTech Fellowship Kenya Cohort 4 · iHUB × Mastercard Foundation · Deadline April 10, 2026</p>
             </div>
         </div>
     </footer>
@@ -1491,17 +1673,17 @@
     
     <a href="#" class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" style="position: fixed; bottom: 20px; right: 20px; background: var(--mcf-orange); color: white; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; box-shadow: var(--shadow-lg); z-index: 1000;"><i class="fas fa-arrow-up"></i></a>
 
-    <!-- AI Chatbot -->
+    <!-- AI Chatbot - UPDATED with correct messaging -->
     <div style="position: fixed; bottom: 160px; right: 20px; width: 300px; background: white; border-radius: 16px; box-shadow: var(--shadow-xl); z-index: 1000; display: none;" id="chatbot">
         <div style="background: var(--mcf-orange); color: white; padding: 1rem; border-radius: 16px 16px 0 0; display: flex; justify-content: space-between;">
             <span><i class="fas fa-robot"></i> NeuroBridge Assistant</span>
             <button onclick="document.getElementById('chatbot').style.display='none'" style="background: none; border: none; color: white; cursor: pointer;">✕</button>
         </div>
         <div style="padding: 1rem;">
-            <p>👋 Hi! I can help with fellowship questions, pilot details, or partnership enquiries.</p>
-            <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--mcf-mid-gray);">Deadline: April 10, 2026</p>
+            <p>👋 Hi! I can help with our fellowship application, pilot details, or partnership enquiries.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--mcf-mid-gray);">We're applying for the Mastercard Foundation Fellowship. Deadline: April 10, 2026</p>
             <div style="margin-top: 1rem;">
-                <a href="#" class="btn btn-primary" style="width: 100%; text-align: center;">Apply Now</a>
+                <a href="#" class="btn btn-primary" style="width: 100%; text-align: center;">Support Our Application</a>
             </div>
         </div>
     </div>
