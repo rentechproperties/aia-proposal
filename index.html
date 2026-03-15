@@ -2,667 +2,1526 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>NeuroBridge Africa · Ability Inclusion Alliance</title>
-    <!-- Font Awesome 6 (free) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroBridge Africa · Ability Inclusion Alliance | Mastercard Foundation Fellowship 2026</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="NeuroBridge Africa: Inclusive EdTech for neurodivergent and deaf learners. Women-led, Kenya-registered charity. Mastercard Foundation EdTech Fellowship applicant.">
+    <meta name="keywords" content="inclusive education, neurodivergent, deaf learners, KSL, EdTech Kenya, disability inclusion, Mastercard Foundation">
+    <meta name="author" content="Ability Inclusion Alliance">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="NeuroBridge Africa - Education Without Barriers">
+    <meta property="og:description" content="Building digital bridges for neurodivergent and deaf learners across Africa. Mastercard Foundation Fellowship 2026.">
+    <meta property="og:image" content="https://neurobridge.africa/social-preview.jpg">
+    <meta property="og:url" content="https://neurobridge.africa">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts: Mastercard-style serif headlines + clean sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700;8..60,800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts: clean, readable -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    
     <style>
+        /* ===== MASTERCARD FOUNDATION BRAND COLORS ===== */
+        :root {
+            --mcf-red: #EB001B;
+            --mcf-orange: #FF5F00;
+            --mcf-yellow: #F79E1B;
+            --mcf-black: #231F20;
+            --mcf-warm-white: #F5F2EE;
+            --mcf-dark-gray: #3D3935;
+            --mcf-mid-gray: #7A7673;
+            --mcf-gradient: linear-gradient(135deg, var(--mcf-red), var(--mcf-orange), var(--mcf-yellow));
+            --white: #FFFFFF;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
         }
-        :root {
-            --foundation-green: #1C4C3B;    /* Primary brand - trust & alignment */
-            --optimistic-yellow: #FD9E38;   /* Learners - energy & bright future */
-            --warm-terracotta: #E26B4A;     /* Caregivers - support & community */
-            --clear-blue: #5DA9B3;          /* Deaf inclusion - clarity & communication */
-            --growth-green: #558B6E;         /* Teachers - development & stability */
-            --off-white: #F8F7F4;
-            --slate: #2C3E50;
-            --light-gray: #E6E8E9;
-            --white: #FFFFFF;
-        }
+        
         body {
-            background-color: var(--off-white);
-            color: #1E2B2F;
-            line-height: 1.5;
-            scroll-behavior: smooth;
-        }
-        a {
-            text-decoration: none;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1.5rem 1.2rem;
-        }
-        /* header / nav */
-        .navbar {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--mcf-black);
             background-color: var(--white);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, .serif {
+            font-family: 'Source Serif 4', serif;
+            font-weight: 700;
+        }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* ===== ACCESSIBILITY (WCAG 2.1 AA) ===== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+        }
+        
+        :focus {
+            outline: 3px solid var(--mcf-orange);
+            outline-offset: 3px;
+        }
+        
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
             position: sticky;
             top: 0;
-            z-index: 10;
+            z-index: 1000;
         }
+        
         .nav-container {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            flex-wrap: wrap;
-            padding: 0.8rem 1.2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            align-items: center;
+            height: 80px;
         }
-        .logo-area {
+        
+        .logo {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 1rem;
         }
+        
         .logo-icon {
-            background: var(--foundation-green);
-            width: 42px;
-            height: 42px;
+            width: 48px;
+            height: 48px;
+            background: var(--mcf-gradient);
+            color: white;
             border-radius: 12px 4px 12px 4px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 1.4rem;
-            box-shadow: 0 4px 8px rgba(28,76,59,0.2);
+            font-weight: 800;
+            font-size: 1.5rem;
+            position: relative;
+            overflow: hidden;
         }
+        
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: translateX(-100%);
+        }
+        
         .logo-text {
             font-weight: 700;
-            font-size: 1.3rem;
-            letter-spacing: -0.02em;
-            color: var(--foundation-green);
+            font-size: 1.25rem;
+            color: var(--mcf-black);
         }
-        .logo-text .aia {
-            color: var(--white);
-            background: var(--foundation-green);
-            padding: 0.2rem 0.6rem;
-            border-radius: 40px;
-            font-size: 0.9rem;
-            margin-left: 8px;
+        
+        .logo-badge {
+            background: var(--mcf-orange);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
             font-weight: 600;
+            margin-left: 0.5rem;
+            font-family: 'Montserrat', sans-serif;
         }
-        .nav-links {
+        
+        .nav-menu {
             display: flex;
-            gap: 1.5rem;
-            font-weight: 500;
-            flex-wrap: wrap;
-        }
-        .nav-links a {
-            color: var(--slate);
-            padding: 0.25rem 0;
-            border-bottom: 2px solid transparent;
-            transition: 0.2s;
-            font-size: 1rem;
-        }
-        .nav-links a:hover {
-            border-bottom-color: var(--optimistic-yellow);
-            color: var(--foundation-green);
-        }
-        /* mobile menu toggle (simple) */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            color: var(--foundation-green);
-        }
-        /* page sections */
-        section {
-            padding: 3rem 0;
-            border-bottom: 1px solid rgba(0,0,0,0.04);
-        }
-        .section-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--foundation-green);
-            margin-bottom: 1.8rem;
-            letter-spacing: -0.02em;
-            position: relative;
-        }
-        .section-title::after {
-            content: '';
-            width: 70px;
-            height: 5px;
-            background: linear-gradient(90deg, var(--optimistic-yellow), var(--warm-terracotta));
-            display: block;
-            margin-top: 0.4rem;
-            border-radius: 4px;
-        }
-        /* hero */
-        .hero {
-            background: linear-gradient(135deg, #EAF4F7 0%, #FFFFFF 80%);
-            padding: 2.5rem 0 3rem;
-        }
-        .hero-content {
-            display: flex;
-            flex-wrap: wrap;
             gap: 2rem;
             align-items: center;
         }
-        .hero-text {
-            flex: 1 1 300px;
+        
+        .nav-link {
+            color: var(--mcf-dark-gray);
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s;
+            font-size: 0.95rem;
         }
-        .hero-text h1 {
-            font-size: 2.8rem;
+        
+        .nav-link:hover {
+            color: var(--mcf-orange);
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .btn-primary {
+            background: var(--mcf-orange);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--mcf-red);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-outline {
+            border: 2px solid var(--mcf-orange);
+            color: var(--mcf-orange);
+            background: transparent;
+        }
+        
+        .btn-outline:hover {
+            background: var(--mcf-orange);
+            color: white;
+        }
+        
+        /* ===== DARK SECTION STYLES ===== */
+        .dark-section {
+            background: var(--mcf-black);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dark-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(235,0,27,0.1), transparent 50%);
+            pointer-events: none;
+        }
+        
+        .dark-section h2, .dark-section .serif {
+            color: var(--white);
+        }
+        
+        .gradient-text {
+            background: var(--mcf-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #FFF9F5 0%, #FFFFFF 100%);
+            position: relative;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--mcf-gradient);
+        }
+        
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .hero-tag {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-badge {
+            background: var(--mcf-orange);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        .hero-badge-outline {
+            border: 2px solid var(--mcf-orange);
+            color: var(--mcf-orange);
+            padding: 0.25rem 1rem;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
             font-weight: 800;
             line-height: 1.2;
-            color: var(--foundation-green);
-            margin-bottom: 1rem;
-        }
-        .hero-accent {
-            background: var(--optimistic-yellow);
-            color: #1D3B45;
-            display: inline-block;
-            padding: 0.2rem 1rem;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 1.1rem;
+            color: var(--mcf-black);
             margin-bottom: 1.5rem;
-            border: 1px solid #e0a84b;
+            font-family: 'Source Serif 4', serif;
         }
+        
+        .hero-title .gradient-text {
+            display: inline-block;
+        }
+        
+        .hero-problem {
+            font-size: 1.5rem;
+            color: var(--mcf-dark-gray);
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--mcf-orange);
+            padding-left: 1.5rem;
+            font-weight: 500;
+        }
+        
         .hero-stats {
-            display: flex;
-            gap: 2rem;
-            margin: 2rem 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
         }
-        .stat-item {
-            font-weight: 600;
+        
+        .stat {
+            text-align: left;
         }
+        
         .stat-number {
             font-size: 2rem;
-            color: var(--foundation-green);
+            font-weight: 800;
+            color: var(--mcf-orange);
+            font-family: 'Source Serif 4', serif;
+            line-height: 1.2;
         }
+        
+        .stat-label {
+            color: var(--mcf-dark-gray);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .credibility-badges {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            background: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1px solid #E5E5E5;
+        }
+        
+        .badge i {
+            color: var(--mcf-orange);
+        }
+        
         .hero-image {
-            flex: 1 1 300px;
-            background: #C9E1E6;
-            border-radius: 40px 12px 40px 12px;
-            padding: 2rem 1.5rem;
-            text-align: center;
-            box-shadow: 0 20px 30px -10px rgba(28,76,59,0.15);
-            /* AI-generated style graphic */
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="300" height="200"><circle cx="80" cy="80" r="28" fill="%235DA9B3" opacity="0.5"/><circle cx="200" cy="60" r="35" fill="%23FD9E38" opacity="0.4"/><circle cx="140" cy="130" r="45" fill="%23558B6E" opacity="0.3"/><circle cx="40" cy="160" r="25" fill="%23E26B4A" opacity="0.5"/><text x="60" y="110" font-family="Inter" font-weight="700" font-size="26" fill="%231C4C3B">♾️</text><text x="160" y="70" font-family="Inter" font-size="20" fill="%232C3E50">🤟</text><text x="100" y="180" font-family="Inter" font-size="20" fill="%232C3E50">📘</text></svg>');
-            background-size: cover;
-            background-position: center;
-            min-height: 220px;
+            background: var(--mcf-black);
+            border-radius: 30px 10px 30px 10px;
+            padding: 2rem;
+            color: white;
+            min-height: 400px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--mcf-red), var(--mcf-orange));
         }
-        .hero-image p {
-            background: rgba(255,255,255,0.7);
-            backdrop-filter: blur(2px);
-            display: inline-block;
-            padding: 0.4rem 1.2rem;
-            border-radius: 60px;
-            font-weight: 600;
-            color: var(--foundation-green);
-            margin-top: 130px;
+        
+        .double-circle {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 3px solid rgba(255,255,255,0.1);
+            border-radius: 50%;
+            top: -50px;
+            right: -50px;
         }
-        /* cards grid */
-        .card-grid {
+        
+        .double-circle::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 3px solid rgba(255,255,255,0.1);
+            border-radius: 50%;
+            bottom: -100px;
+            left: -100px;
+        }
+        
+        /* ===== STATS SECTION ===== */
+        .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
             margin: 2rem 0;
         }
-        .card {
-            background: var(--white);
-            border-radius: 28px 10px 28px 10px;
-            padding: 2rem 1.5rem;
-            box-shadow: 0 12px 24px -12px rgba(28,76,59,0.1);
-            transition: transform 0.15s ease;
-            border: 1px solid rgba(93,169,179,0.2);
-        }
-        .card:hover {
-            transform: translateY(-6px);
-        }
-        .card-icon {
-            font-size: 2.4rem;
-            background: #EAF4F7;
-            width: 60px;
-            height: 60px;
-            border-radius: 18px 6px 18px 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--foundation-green);
-            margin-bottom: 1.2rem;
-        }
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.75rem;
-            color: #173B44;
-        }
-        .tag {
-            background: var(--light-gray);
-            padding: 0.3rem 1rem;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #2C5F6B;
-            display: inline-block;
-            margin: 0.8rem 0 0.2rem;
-        }
-        /* impact strip */
-        .impact-metrics {
-            background: var(--white);
-            border-radius: 40px;
-            padding: 2rem 1.8rem;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 2rem;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
-            border: 1px solid #E2F0F3;
-        }
-        .metric {
+        
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
             text-align: center;
-            min-width: 140px;
+            border-top: 4px solid var(--mcf-orange);
         }
-        .metric h4 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--foundation-green);
-        }
-        .metric p {
-            font-size: 1rem;
-            color: #2C5F6B;
-        }
-        .pilot-box {
-            background: var(--foundation-green);
-            color: white;
-            border-radius: 32px 12px 32px 12px;
-            padding: 2rem 2rem;
-            background-image: radial-gradient(circle at 80% 30%, #3F7E8F 0%, #0F3D4A 100%);
-        }
-        .pilot-flex {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            align-items: center;
-        }
-        .pilot-detail {
-            flex: 2 1 260px;
-        }
-        .pilot-graphic {
-            flex: 1 1 160px;
-            background: #B4D7DE;
-            border-radius: 30px 6px 30px 6px;
-            padding: 1rem;
-            text-align: center;
+        
+        .stat-card .number {
             font-size: 3rem;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 120" width="150" height="120"><circle cx="40" cy="40" r="18" fill="%23FD9E38" opacity="0.6"/><circle cx="110" cy="50" r="25" fill="%235DA9B3" opacity="0.5"/><circle cx="75" cy="85" r="22" fill="%23558B6E" opacity="0.6"/><text x="45" y="75" font-size="32" fill="%231C4C3B">🧑‍🏫</text><text x="100" y="35" font-size="28" fill="%231C4C3B">👧🏾</text></svg>');
-            background-size: cover;
+            font-weight: 800;
+            color: var(--mcf-red);
+            font-family: 'Source Serif 4', serif;
         }
-        /* chatbot mock */
-        .chatbot-mock {
-            position: fixed;
-            bottom: 90px;
-            right: 20px;
-            width: 280px;
-            background: var(--white);
-            border-radius: 30px 30px 12px 30px;
-            box-shadow: 0 25px 40px -10px rgba(28,76,59,0.3);
-            border: 1px solid #cde3e8;
-            display: none;
-            z-index: 99;
+        
+        /* ===== PROBLEM SECTION ===== */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        
+        .problem-card {
+            background: var(--mcf-warm-white);
+            padding: 2rem 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
             overflow: hidden;
         }
-        .chat-header {
-            background: var(--foundation-green);
-            color: white;
-            padding: 1rem;
+        
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--mcf-gradient);
+        }
+        
+        .problem-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--mcf-orange);
+            font-family: 'Source Serif 4', serif;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .problem-label {
             font-weight: 600;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            color: var(--mcf-black);
+            margin-bottom: 0.5rem;
         }
-        .chat-header button {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.3rem;
-            cursor: pointer;
+        
+        .problem-desc {
+            font-size: 0.875rem;
+            color: var(--mcf-mid-gray);
         }
-        .chat-body {
-            padding: 1rem;
-            min-height: 140px;
-            font-size: 0.95rem;
-            background: #FBFCFA;
+        
+        /* ===== MODULES GRID ===== */
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
         }
-        .chat-footer {
-            padding: 0.7rem;
-            background: #f0f5f6;
-            display: flex;
-            gap: 0.3rem;
+        
+        .module-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #E5E5E5;
+            transition: transform 0.3s;
         }
-        .chat-footer input {
-            flex: 1;
-            border: none;
-            background: white;
-            border-radius: 40px;
-            padding: 0.5rem 1rem;
+        
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--mcf-orange);
         }
-        .chat-footer i {
-            background: var(--optimistic-yellow);
-            padding: 0.6rem;
-            border-radius: 50%;
-            color: #1E3B44;
-        }
-        /* whatsapp & scroll top */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 24px;
-            right: 20px;
-            background-color: #25D366;
-            color: white;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
+        
+        .module-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--mcf-gradient);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .module-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--mcf-black);
+        }
+        
+        .module-features {
+            list-style: none;
+            margin-top: 1rem;
+        }
+        
+        .module-features li {
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+            color: var(--mcf-dark-gray);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .module-features i {
+            color: var(--mcf-orange);
+            font-size: 0.875rem;
+        }
+        
+        /* ===== PILOT SECTION ===== */
+        .pilot-timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 3rem 0;
+        }
+        
+        .timeline-phase {
+            background: var(--mcf-warm-white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            position: relative;
+        }
+        
+        .phase-number {
             font-size: 2rem;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            z-index: 100;
-            transition: 0.2s;
+            font-weight: 800;
+            color: var(--mcf-orange);
+            font-family: 'Source Serif 4', serif;
+            opacity: 0.3;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
         }
-        .whatsapp-float:hover {
-            background-color: #20B859;
-            transform: scale(1.07);
+        
+        .phase-title {
+            font-weight: 700;
+            color: var(--mcf-black);
+            margin-bottom: 0.5rem;
         }
-        .scroll-top {
-            position: fixed;
-            bottom: 90px;
-            right: 20px;
-            background: var(--foundation-green);
-            color: white;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            border: 2px solid white;
-            z-index: 100;
-            transition: 0.2s;
+        
+        .phase-desc {
+            font-size: 0.875rem;
+            color: var(--mcf-mid-gray);
         }
-        .scroll-top:hover {
-            background: #124956;
+        
+        .demographics-chart {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
         }
-        /* footer */
-        footer {
-            background: var(--foundation-green);
-            color: #DDECF0;
-            padding: 2rem 1.2rem;
+        
+        .demo-bar {
             text-align: center;
         }
-        .footer-logos {
+        
+        .bar {
+            height: 150px;
+            background: linear-gradient(to top, var(--mcf-red), var(--mcf-orange));
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        
+        .bar-label {
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+        
+        .bar-value {
+            color: var(--mcf-orange);
+            font-weight: 700;
+        }
+        
+        /* ===== BUDGET DONUT ===== */
+        .budget-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin: 3rem 0;
+        }
+        
+        .donut-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+        }
+        
+        .donut-ring {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(
+                var(--mcf-red) 0deg 126deg,
+                var(--mcf-orange) 126deg 216deg,
+                var(--mcf-yellow) 216deg 288deg,
+                var(--mcf-black) 288deg 360deg
+            );
+            position: relative;
+        }
+        
+        .donut-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 50%;
             display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--mcf-black);
+        }
+        
+        /* ===== TESTIMONIALS ===== */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            border-left: 4px solid var(--mcf-orange);
+        }
+        
+        .quote-icon {
+            color: var(--mcf-orange);
+            font-size: 2rem;
+            opacity: 0.3;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--mcf-dark-gray);
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--mcf-black);
+        }
+        
+        .testimonial-role {
+            font-size: 0.875rem;
+            color: var(--mcf-mid-gray);
+        }
+        
+        /* ===== TEAM GRID ===== */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .team-card {
+            text-align: center;
+        }
+        
+        .team-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            background: var(--mcf-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+        }
+        
+        .team-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--mcf-black);
+            margin-bottom: 0.25rem;
+        }
+        
+        .team-title {
+            color: var(--mcf-orange);
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-bio {
+            font-size: 0.875rem;
+            color: var(--mcf-mid-gray);
+        }
+        
+        /* ===== PARTNER LOGOS ===== */
+        .partners-grid {
+            display: flex;
+            flex-wrap: wrap;
             gap: 2rem;
             justify-content: center;
-            flex-wrap: wrap;
-            margin: 1.8rem 0 0.8rem;
-            font-size: 1rem;
-            font-weight: 500;
+            align-items: center;
+            margin: 3rem 0;
+        }
+        
+        .partner-logo {
+            background: var(--mcf-warm-white);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            color: var(--mcf-black);
+            border: 1px solid #E5E5E5;
+        }
+        
+        /* ===== FAQ SECTION ===== */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .faq-item {
+            background: var(--mcf-warm-white);
+            padding: 2rem;
+            border-radius: 12px;
+        }
+        
+        .faq-q {
+            font-weight: 700;
+            color: var(--mcf-black);
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+        
+        .faq-a {
+            color: var(--mcf-mid-gray);
+        }
+        
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--mcf-black);
             color: var(--white);
+            padding: 4rem 0 2rem;
+            position: relative;
+            overflow: hidden;
         }
-        .footer-logos span {
-            color: var(--white);
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--mcf-gradient);
         }
-        /* responsiveness */
-        @media (max-width: 700px) {
-            .nav-links { display: none; }
-            .menu-toggle { display: block; }
-            .hero-text h1 { font-size: 2.2rem; }
-            .section-title { font-size: 1.9rem; }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
         }
-        /* simple nav demo for mobile (not full functionality but visible) */
-        .mobile-nav {
-            display: none;
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-family: 'Source Serif 4', serif;
         }
-        /* demo purpose: inline style to always show chatbot when active via js */
-        .show-chat {
-            display: block !important;
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .footer-link {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-link:hover {
+            color: var(--mcf-orange);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        
+        .social-link:hover {
+            background: var(--mcf-orange);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.875rem;
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero-grid,
+            .modules-grid,
+            .team-grid,
+            .testimonials-grid,
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .problem-grid,
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero-grid,
+            .modules-grid,
+            .team-grid,
+            .testimonials-grid,
+            .footer-grid,
+            .problem-grid,
+            .stats-grid,
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
 <body>
-    <!-- fixed elements -->
-    <div class="whatsapp-float" title="Chat with us">
-        <i class="fab fa-whatsapp"></i>
-    </div>
-    <div class="scroll-top" id="scrollTop" title="Scroll to top">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-    <!-- AI chatbot mock -->
-    <div class="chatbot-mock" id="chatbotMock">
-        <div class="chat-header">
-            <span><i class="fas fa-robot" style="margin-right: 8px;"></i> NeuroBridge AI</span>
-            <button id="closeChat"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="chat-body">
-            <p>👋🏾 Hi! I'm your inclusion assistant. Ask about pilot, sign language, or learners.</p>
-            <p style="background: #EAF4F7; padding: 0.5rem; border-radius: 16px; margin-top: 8px;"><i class="fas fa-lightbulb"></i> Our 8‑week pilot starts soon!</p>
-        </div>
-        <div class="chat-footer">
-            <input type="text" placeholder="Type message..." value="Demo (static)">
-            <i class="fas fa-paper-plane"></i>
-        </div>
-    </div>
-
-    <!-- navigation -->
+    <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo-area">
-                <div class="logo-icon"><span>A</span></div>
-                <div class="logo-text">NeuroBridge <span class="aia">AIA</span></div>
+        <div class="container nav-container">
+            <div class="logo">
+                <div class="logo-icon">NB</div>
+                <div class="logo-text">
+                    NeuroBridge Africa
+                    <span class="logo-badge">MCF Fellowship 2026</span>
+                </div>
             </div>
-            <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
-            <div class="nav-links" id="navLinks">
-                <a href="#home">Home</a>
-                <a href="#programs">Programs</a>
-                <a href="#pilot">Pilot</a>
-                <a href="#impact">Impact</a>
-                <a href="#contact">Contact</a>
+            
+            <div class="nav-menu">
+                <a href="#problem" class="nav-link">Problem</a>
+                <a href="#solution" class="nav-link">Solution</a>
+                <a href="#pilot" class="nav-link">Pilot</a>
+                <a href="#team" class="nav-link">Team</a>
+                <a href="#contact" class="btn btn-primary">Partner With Us <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </nav>
 
-    <main>
-        <!-- HOME / HERO -->
-        <section id="home" class="hero">
-            <div class="container hero-content">
-                <div class="hero-text">
-                    <span class="hero-accent"><i class="fas fa-hand-holding-heart"></i> Ability·Inclusion·Alliance</span>
-                    <h1>Digital bridge for every learner.</h1>
-                    <p style="font-size: 1.25rem; max-width: 550px;">NeuroBridge Africa: inclusive EdTech for neurodivergent, deaf, and disabled learners. Rooted in UDL & KSL.</p>
-                    <div class="hero-stats">
-                        <div class="stat-item"><span class="stat-number">30</span> pilot students</div>
-                        <div class="stat-item"><span class="stat-number">8</span> weeks</div>
-                        <div class="stat-item"><span class="stat-number">6</span> core tools</div>
+    <!-- Hero Section (SLIDE 1 & 2) -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <div class="hero-tag">
+                    <span class="hero-badge">Mastercard Foundation Fellow '26</span>
+                    <span class="hero-badge-outline">iHub Kenya</span>
+                </div>
+                <h1 class="hero-title">
+                    NeuroBridge <span class="gradient-text">Africa</span>
+                </h1>
+                <p class="hero-problem">
+                    "85% of disabled children in Kenya are excluded from digital education. Not because they can't learn. Because no one built it for them."
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">15%</div>
+                        <div class="stat-label">EdTech with accessibility</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">80%+</div>
+                        <div class="stat-label">PWD unemployment</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">8%</div>
+                        <div class="stat-label">Teachers with SNE training</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">2%</div>
+                        <div class="stat-label">TVET disability access</div>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <p>🧠 ✨ 🤟 inclusive design</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROGRAMS (learners, caregivers, teachers, sign language) -->
-        <section id="programs">
-            <div class="container">
-                <h2 class="section-title">Designed with inclusion</h2>
-                <div class="card-grid">
-                    <div class="card">
-                        <div class="card-icon"><i class="fas fa-brain" style="color: var(--optimistic-yellow);"></i></div>
-                        <h3>Neurodivergent learners</h3>
-                        <p>Focus‑friendly modules, gamified paths, sensory‑smart interface for ADHD, autism, dyslexia.</p>
-                        <span class="tag">personalised</span>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon"><i class="fas fa-hands" style="color: var(--clear-blue);"></i></div>
-                        <h3>KSL / Deaf inclusion</h3>
-                        <p>Kenyan Sign Language video lessons, AI avatar glossary, signed curriculum for CBC.</p>
-                        <span class="tag">SignVerse tech</span>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon"><i class="fas fa-chalkboard-user" style="color: var(--growth-green);"></i></div>
-                        <h3>Teacher training</h3>
-                        <p>Inclusive pedagogy, neurodiversity, assistive tech, adaptive lesson design.</p>
-                        <span class="tag">CPD accredited</span>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon"><i class="fas fa-family" style="color: var(--warm-terracotta);"></i></div>
-                        <h3>Caregiver hub</h3>
-                        <p>Support groups, daily tools, behavioral strategies, neurodiversity awareness.</p>
-                        <span class="tag">peer community</span>
-                    </div>
+                
+                <div class="credibility-badges">
+                    <span class="badge"><i class="fas fa-check-circle"></i> Women-led CBO</span>
+                    <span class="badge"><i class="fas fa-check-circle"></i> Kenya-registered</span>
+                    <span class="badge"><i class="fas fa-check-circle"></i> Founded April 2025</span>
+                    <span class="badge"><i class="fas fa-check-circle"></i> Nairobi-based</span>
                 </div>
             </div>
-        </section>
-
-        <!-- PILOT PROJECT : 30 students, 8 weeks -->
-        <section id="pilot" style="background-color: #EAF1F4;">
-            <div class="container">
-                <h2 class="section-title">Pilot — Thika, Kenya</h2>
-                <div class="pilot-box">
-                    <div class="pilot-flex">
-                        <div class="pilot-detail">
-                            <h3 style="font-size: 2.2rem; color: white; margin-bottom: 0.5rem;">30 students · 8 weeks</h3>
-                            <p style="font-size: 1.2rem; color: #D2ECF2;">Inclusive pilot in 2 special schools & 1 inclusive unit. Learners with autism, deafness, dyslexia, and multiple disabilities.</p>
-                            <div style="display: flex; gap: 1.5rem; margin-top: 1.8rem; color: #BCE3EB;">
-                                <div><i class="fas fa-chart-line"></i> pre/post testing</div>
-                                <div><i class="fas fa-sign-language"></i> KSL-supported</div>
-                                <div><i class="fas fa-users"></i> 15 teachers</div>
-                            </div>
-                        </div>
-                        <div class="pilot-graphic">
-                            <!-- svg background -->
-                        </div>
-                    </div>
-                </div>
-                <div style="margin-top: 2.5rem; background: white; border-radius: 32px; padding: 1.8rem;">
-                    <h4 style="color: var(--foundation-green); font-size: 1.5rem; margin-bottom: 1rem;">🗓️ pilot components</h4>
-                    <div style="display: flex; flex-wrap: wrap; gap: 1.2rem;">
-                        <span style="background: #F0F7F9; padding: 0.6rem 1.5rem; border-radius: 60px;"><i class="fas fa-check-circle" style="color: var(--growth-green);"></i> KSL math videos</span>
-                        <span style="background: #F0F7F9; padding: 0.6rem 1.5rem; border-radius: 60px;"><i class="fas fa-check-circle" style="color: var(--growth-green);"></i> focus‑friendly literacy</span>
-                        <span style="background: #F0F7F9; padding: 0.6rem 1.5rem; border-radius: 60px;"><i class="fas fa-check-circle" style="color: var(--growth-green);"></i> caregiver weekly workshops</span>
-                        <span style="background: #F0F7F9; padding: 0.6rem 1.5rem; border-radius: 60px;"><i class="fas fa-check-circle" style="color: var(--growth-green);"></i> teacher mentoring</span>
+            
+            <div class="hero-image">
+                <div class="double-circle"></div>
+                <div class="double-circle" style="top: auto; bottom: -50px; left: -50px;"></div>
+                <div style="position: relative; z-index: 2; height: 100%; display: flex; align-items: center; justify-content: center; text-align: center;">
+                    <div>
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">🧠🤟📚</div>
+                        <h3 style="font-size: 2rem; font-weight: 700;">No child left behind</h3>
+                        <p style="opacity: 0.9;">because of disability or neurodivergence</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- IMPACT METRICS & visuals -->
-        <section id="impact">
-            <div class="container">
-                <h2 class="section-title">Projected & early impact</h2>
-                <div class="impact-metrics">
-                    <div class="metric"><h4>+64%</h4><p>engagement (pilot)</p></div>
-                    <div class="metric"><h4>82%</h4><p>caregiver confidence</p></div>
-                    <div class="metric"><h4>30</h4><p>schools targeted year 2</p></div>
-                    <div class="metric"><h4>9/10</h4><p>teachers recommend</p></div>
+    <!-- The Problem Section (SLIDE 3) -->
+    <section id="problem" style="padding: 5rem 0;">
+        <div class="container">
+            <h2 class="section-title" style="font-size: 2.5rem; margin-bottom: 1rem;">The Scale of Exclusion</h2>
+            <p class="section-subtitle" style="color: var(--mcf-mid-gray); max-width: 600px; margin-bottom: 3rem;">Kenya's digital education system is failing children with disabilities.</p>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-number">15%</div>
+                    <div class="problem-label">EdTech Platforms</div>
+                    <div class="problem-desc">include basic accessibility features</div>
                 </div>
-                <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 3rem;">
-                    <div style="flex: 1 1 220px; background: white; border-radius: 30px; padding: 1.5rem; border: 1px solid #CEE2E7;">
-                        <i class="fas fa-chart-pie" style="font-size: 2.5rem; color: var(--optimistic-yellow); margin-bottom: 0.5rem;"></i>
-                        <h4>Disability data & analytics</h4>
-                        <p>Track inclusion gaps, learning outcomes, inform policy.</p>
-                    </div>
-                    <div style="flex: 1 1 220px; background: white; border-radius: 30px; padding: 1.5rem; border: 1px solid #CEE2E7;">
-                        <i class="fas fa-person-walking" style="font-size: 2.5rem; color: var(--warm-terracotta);"></i>
-                        <h4>1M+ learners</h4>
-                        <p>Potential reach across Africa by 2027</p>
-                    </div>
+                <div class="problem-card">
+                    <div class="problem-number">80%+</div>
+                    <div class="problem-label">Unemployment</div>
+                    <div class="problem-desc">for persons with disabilities in Kenya</div>
                 </div>
-                <!-- testimonial placeholder -->
-                <div style="margin-top: 3rem; background: #E6F2F5; border-radius: 40px; padding: 2rem;">
-                    <i class="fas fa-quote-left" style="font-size: 2.2rem; color: var(--foundation-green); opacity: 0.5;"></i>
-                    <p style="font-size: 1.25rem; max-width: 700px; font-style: italic;">“My son Yusuf, who has autism, engaged with a lesson for 20 minutes — first time ever. NeuroBridge sees my child.” — Mama Yusuf, caregiver.</p>
+                <div class="problem-card">
+                    <div class="problem-number">8%</div>
+                    <div class="problem-label">Teachers trained</div>
+                    <div class="problem-desc">in special needs education</div>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-number">2%</div>
+                    <div class="problem-label">TVET programs</div>
+                    <div class="problem-desc">offer disability inclusion</div>
                 </div>
             </div>
-        </section>
+            
+            <div style="margin-top: 3rem; background: var(--mcf-warm-white); padding: 2rem; border-radius: 16px;">
+                <p style="font-size: 1.25rem; font-style: italic; color: var(--mcf-black);">
+                    "Across Africa, most digital education platforms are not designed for learners with disabilities. Deaf learners cannot access lessons without sign language. Neurodivergent learners struggle with rigid formats. Teachers lack training. Parents lack tools. Millions of children are left behind — not because they cannot learn, but because the system was not built for them."
+                </p>
+            </div>
+        </div>
+    </section>
 
-        <!-- contact / call to action -->
-        <section id="contact" style="background: white;">
-            <div class="container" style="text-align: center; max-width: 800px;">
-                <h2 class="section-title" style="text-align: center;">Partner with us</h2>
-                <p style="font-size: 1.3rem; margin-bottom: 2rem;">Funders · Implementers · Innovators</p>
-                <div style="background: #F4FAFC; border-radius: 60px; padding: 1.8rem; display: flex; flex-wrap: wrap; gap: 1.2rem; justify-content: center;">
-                    <span style="font-weight: 600; background: white; padding: 0.6rem 1.6rem; border-radius: 40px;">📧 partnerships@neurobridge.africa</span>
-                    <span style="font-weight: 600; background: white; padding: 0.6rem 1.6rem; border-radius: 40px;">📞 +254 700 123 456</span>
+    <!-- Who We Are (SLIDE 4) -->
+    <section class="dark-section" style="padding: 5rem 0;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; color: white; margin-bottom: 1rem;">Ability Inclusion Alliance</h2>
+            <p style="color: rgba(255,255,255,0.8); font-size: 1.25rem; max-width: 600px; margin-bottom: 3rem;">Women-led. Expert-founded. Community-rooted.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem;">
+                <div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 16px;">
+                        <p><span style="color: var(--mcf-orange); font-weight: 700;">Founded:</span> April 2025</p>
+                        <p><span style="color: var(--mcf-orange); font-weight: 700;">Location:</span> Nairobi, Kenya</p>
+                        <p><span style="color: var(--mcf-orange); font-weight: 700;">Registration:</span> Kenya-registered charity</p>
+                        <p><span style="color: var(--mcf-orange); font-weight: 700;">Leadership:</span> Women-led CBO</p>
+                    </div>
                 </div>
-                <div class="footer-logos" style="margin-top: 2.5rem;">
-                    <span>Mastercard Foundation</span>
-                    <span>iHub</span>
-                    <span>Ability Inclusion Alliance</span>
+                <div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 16px;">
+                        <p style="font-size: 1.125rem; font-style: italic;">"Built by people who live this mission — including a single father of a neurodivergent child and a chairlady with lived disability experience."</p>
+                    </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer>
-        <p>© 2025 NeuroBridge Africa — a fully inclusive learning initiative.  All images AI‑generated / representative.</p>
-        <p style="margin-top: 0.8rem;">#LeaveNoLearnerBehind 🤟🧠</p>
+    <!-- The Solution - 6 Modules (SLIDE 5-8) -->
+    <section id="solution" style="padding: 5rem 0;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Introducing <span class="gradient-text">NeuroBridge Africa</span></h2>
+            <p style="color: var(--mcf-mid-gray); font-size: 1.25rem; margin-bottom: 3rem;">No child left behind because of disability or neurodivergence.</p>
+            
+            <div class="modules-grid">
+                <!-- Module 1 -->
+                <div class="module-card">
+                    <div class="module-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Neurodivergent Learning</h3>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Focus-friendly modules</li>
+                        <li><i class="fas fa-check"></i> Gamification</li>
+                        <li><i class="fas fa-check"></i> Personalized paths</li>
+                        <li><i class="fas fa-check"></i> Sensory-friendly interface</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--mcf-mid-gray);">1 in 7 children globally is neurodivergent. Zero Kenyan EdTech platforms serve them specifically.</p>
+                </div>
+                
+                <!-- Module 2 -->
+                <div class="module-card">
+                    <div class="module-icon"><i class="fas fa-hands"></i></div>
+                    <h3>KSL Integration</h3>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> KSL video lessons</li>
+                        <li><i class="fas fa-check"></i> AI sign-language avatars</li>
+                        <li><i class="fas fa-check"></i> Speech-to-sign</li>
+                        <li><i class="fas fa-check"></i> Subject glossary</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--mcf-mid-gray);">Deaf learners face absolute exclusion without sign language. KSL is core, not optional.</p>
+                </div>
+                
+                <!-- Module 3 -->
+                <div class="module-card">
+                    <div class="module-icon"><i class="fas fa-book-open"></i></div>
+                    <h3>CBC-Aligned Curriculum</h3>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Mathematics</li>
+                        <li><i class="fas fa-check"></i> Science & Literacy</li>
+                        <li><i class="fas fa-check"></i> Life Skills</li>
+                        <li><i class="fas fa-check"></i> Digital Skills</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--mcf-mid-gray);">Multi-format: audio, text, sign language, visual, interactive.</p>
+                </div>
+                
+                <!-- Module 4 -->
+                <div class="module-card">
+                    <div class="module-icon"><i class="fas fa-family"></i></div>
+                    <h3>Caregiver Support Hub</h3>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Training videos</li>
+                        <li><i class="fas fa-check"></i> Neurodiversity awareness</li>
+                        <li><i class="fas fa-check"></i> Behavioral strategies</li>
+                        <li><i class="fas fa-check"></i> Peer WhatsApp communities</li>
+                    </ul>
+                </div>
+                
+                <!-- Module 5 -->
+                <div class="module-card">
+                    <div class="module-icon"><i class="fas fa-chalkboard-user"></i></div>
+                    <h3>Teacher Training</h3>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Inclusive pedagogy</li>
+                        <li><i class="fas fa-check"></i> Assistive technology</li>
+                        <li><i class="fas fa-check"></i> Differentiated instruction</li>
+                        <li><i class="fas fa-check"></i> Certificate pathway</li>
+                    </ul>
+                </div>
+                
+                <!-- Module 6 -->
+                <div class="module-card">
+                    <div class="module-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Disability Data & Analytics</h3>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Learning progress tracking</li>
+                        <li><i class="fas fa-check"></i> Inclusion gap mapping</li>
+                        <li><i class="fas fa-check"></i> Gender-disaggregated data</li>
+                        <li><i class="fas fa-check"></i> EMIS-compatible reporting</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem; background: var(--mcf-warm-white); padding: 2rem; border-radius: 16px;">
+                <p style="font-weight: 700; color: var(--mcf-black);">UNIQUE INNOVATION:</p>
+                <p>NeuroBridge Africa is the ONLY platform in Kenya integrating neurodivergent tools + KSL + caregiver training + teacher capacity building into ONE ecosystem.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pilot Project (SLIDE 9) -->
+    <section id="pilot" style="padding: 5rem 0; background: var(--mcf-warm-white);">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Nairobi Inclusive Learning Pilot 2026</h2>
+            <p style="color: var(--mcf-mid-gray); font-size: 1.25rem; margin-bottom: 2rem;">30 learners. 8 weeks. Proof of impact.</p>
+            
+            <!-- Demographics -->
+            <h3 style="margin: 2rem 0 1rem;">Learner Demographics</h3>
+            <div class="demographics-chart">
+                <div class="demo-bar">
+                    <div class="bar" style="height: 100px;"><div style="height: 100%; width: 100%; background: linear-gradient(to top, var(--mcf-red), var(--mcf-orange)); border-radius: 8px 8px 0 0;"></div></div>
+                    <div class="bar-label">Neurodivergent</div>
+                    <div class="bar-value">10</div>
+                </div>
+                <div class="demo-bar">
+                    <div class="bar" style="height: 80px;"><div style="height: 80%; width: 100%; background: linear-gradient(to top, var(--mcf-red), var(--mcf-orange)); border-radius: 8px 8px 0 0;"></div></div>
+                    <div class="bar-label">Deaf/HOH</div>
+                    <div class="bar-value">8</div>
+                </div>
+                <div class="demo-bar">
+                    <div class="bar" style="height: 70px;"><div style="height: 70%; width: 100%; background: linear-gradient(to top, var(--mcf-red), var(--mcf-orange)); border-radius: 8px 8px 0 0;"></div></div>
+                    <div class="bar-label">Learning Disabilities</div>
+                    <div class="bar-value">7</div>
+                </div>
+                <div class="demo-bar">
+                    <div class="bar" style="height: 50px;"><div style="height: 50%; width: 100%; background: linear-gradient(to top, var(--mcf-red), var(--mcf-orange)); border-radius: 8px 8px 0 0;"></div></div>
+                    <div class="bar-label">Physical Disabilities</div>
+                    <div class="bar-value">5</div>
+                </div>
+                <div class="demo-bar">
+                    <div class="bar" style="height: 30px;"><div style="height: 30%; width: 100%; background: linear-gradient(to top, var(--mcf-red), var(--mcf-orange)); border-radius: 8px 8px 0 0;"></div></div>
+                    <div class="bar-label">Total</div>
+                    <div class="bar-value">30</div>
+                </div>
+            </div>
+            
+            <!-- Timeline -->
+            <h3 style="margin: 3rem 0 1rem;">4-Phase Timeline</h3>
+            <div class="pilot-timeline">
+                <div class="timeline-phase">
+                    <div class="phase-number">1</div>
+                    <div class="phase-title">Weeks 1-2</div>
+                    <div class="phase-desc">Baseline assessment & onboarding</div>
+                </div>
+                <div class="timeline-phase">
+                    <div class="phase-number">2</div>
+                    <div class="phase-title">Weeks 3-4</div>
+                    <div class="phase-desc">Core CBC learning + KSL lessons</div>
+                </div>
+                <div class="timeline-phase">
+                    <div class="phase-number">3</div>
+                    <div class="phase-title">Weeks 5-6</div>
+                    <div class="phase-desc">Iteration, teacher training, caregiver groups</div>
+                </div>
+                <div class="timeline-phase">
+                    <div class="phase-number">4</div>
+                    <div class="phase-title">Weeks 7-8</div>
+                    <div class="phase-desc">Evaluation, data collection, pilot report</div>
+                </div>
+            </div>
+            
+            <!-- Partners -->
+            <h3 style="margin: 3rem 0 1rem;">Confirmed Pilot Partners</h3>
+            <div class="partners-grid">
+                <span class="partner-logo">First Steps Kenya</span>
+                <span class="partner-logo">Childfirst</span>
+                <span class="partner-logo">Nairobi County Schools</span>
+                <span class="partner-logo">Intuitive Foundation</span>
+                <span class="partner-logo">USIU Nairobi</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Metrics (SLIDE 10) -->
+    <section style="padding: 5rem 0;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Measuring What Matters</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="number">30</div>
+                    <p>Learners supported Year 1</p>
+                </div>
+                <div class="stat-card">
+                    <div class="number">60</div>
+                    <p>Caregivers trained</p>
+                </div>
+                <div class="stat-card">
+                    <div class="number">15</div>
+                    <p>Teachers certified</p>
+                </div>
+                <div class="stat-card">
+                    <div class="number">500+</div>
+                    <p>Learners by Year 3</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
+                <div>
+                    <div style="font-size: 2rem; font-weight: 800; color: var(--mcf-orange);">85%</div>
+                    <p>Literacy engagement improvement</p>
+                </div>
+                <div>
+                    <div style="font-size: 2rem; font-weight: 800; color: var(--mcf-orange);">92%</div>
+                    <p>Platform accessibility score</p>
+                </div>
+                <div>
+                    <div style="font-size: 2rem; font-weight: 800; color: var(--mcf-orange);">78%</div>
+                    <p>Caregiver confidence increase</p>
+                </div>
+                <div>
+                    <div style="font-size: 2rem; font-weight: 800; color: var(--mcf-orange);">82%</div>
+                    <p>Teacher inclusive skills improvement</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scale Pathway (SLIDE 11) -->
+    <section class="dark-section" style="padding: 5rem 0;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; color: white; margin-bottom: 2rem;">From Pilot to Pan-African</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 16px;">
+                    <div style="font-size: 3rem; color: var(--mcf-orange); margin-bottom: 1rem;">2026</div>
+                    <h3 style="color: white;">Year 1</h3>
+                    <p style="color: rgba(255,255,255,0.8);">30 learners — Nairobi pilot</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 16px;">
+                    <div style="font-size: 3rem; color: var(--mcf-orange); margin-bottom: 1rem;">2027-28</div>
+                    <h3 style="color: white;">Years 2-3</h3>
+                    <p style="color: rgba(255,255,255,0.8);">500+ learners — 20 schools, 3 counties</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 16px;">
+                    <div style="font-size: 3rem; color: var(--mcf-orange); margin-bottom: 1rem;">2029-30</div>
+                    <h3 style="color: white;">Years 4-5</h3>
+                    <p style="color: rgba(255,255,255,0.8);">5,000+ learners — all 47 counties, East Africa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials (SLIDE 12) -->
+    <section style="padding: 5rem 0;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">In Their Own Words</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p class="testimonial-text">"My son has ADHD and every school told us he was just difficult. NeuroBridge helped him learn at his own pace for the first time. He finished three lessons last week and was so proud."</p>
+                    <div class="testimonial-author">— Fatuma W.</div>
+                    <div class="testimonial-role">Caregiver, Eastleigh, Nairobi</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p class="testimonial-text">"The KSL video lessons gave my daughter access to education she has never had before. She can keep up with her class for the first time. This is everything we have been asking for."</p>
+                    <div class="testimonial-author">— David M.</div>
+                    <div class="testimonial-role">Parent, Umoja, Nairobi</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p class="testimonial-text">"The inclusive teaching training changed how I approach my whole class — not just students with disabilities. Every child is benefiting. This is what teacher development should look like."</p>
+                    <div class="testimonial-author">— Mrs. Akinyi</div>
+                    <div class="testimonial-role">CBC Teacher, Pilot School</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Team (SLIDE 13) -->
+    <section id="team" style="padding: 5rem 0; background: var(--mcf-warm-white);">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Founded by Experts. Driven by Mission.</h2>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-image">👩</div>
+                    <div class="team-name">Annab Mohamed</div>
+                    <div class="team-title">Founder & Chairlady</div>
+                    <div class="team-bio">Humanitarian professional, lived disability experience, international programme leadership.</div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-image">👨</div>
+                    <div class="team-name">Dr. John Onala</div>
+                    <div class="team-title">Treasurer & Advisor</div>
+                    <div class="team-bio">Educational Psychologist, inclusive education specialist, decades of child assessment.</div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-image">👩</div>
+                    <div class="team-name">Maryanne Chepkorir Rop</div>
+                    <div class="team-title">Executive Secretary</div>
+                    <div class="team-bio">Counseling Psychologist, mental health mentor, safeguarding lead.</div>
+                </div>
+                
+                <div class="team-card">
+                    <div class="team-image">👨</div>
+                    <div class="team-name">Mohamud Hassan</div>
+                    <div class="team-title">Tech Lead</div>
+                    <div class="team-bio">Full-stack developer, entrepreneur, single father of a neurodivergent child — the personal mission behind the tech.</div>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 2rem; font-style: italic; color: var(--mcf-orange);">Led by a chairlady with lived disability experience. Built by a single father of a neurodivergent child.</p>
+        </div>
+    </section>
+
+    <!-- Why Us (SLIDE 14) -->
+    <section style="padding: 5rem 0;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Four things no other applicant can say</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                <div style="background: var(--mcf-warm-white); padding: 2rem; border-radius: 16px; border-left: 4px solid var(--mcf-orange);">
+                    <div style="font-size: 2rem; color: var(--mcf-orange); margin-bottom: 1rem;">1</div>
+                    <p style="font-weight: 600;">Only platform combining neurodivergent + KSL + caregiver + teacher tools in one ecosystem</p>
+                </div>
+                <div style="background: var(--mcf-warm-white); padding: 2rem; border-radius: 16px; border-left: 4px solid var(--mcf-orange);">
+                    <div style="font-size: 2rem; color: var(--mcf-orange); margin-bottom: 1rem;">2</div>
+                    <p style="font-weight: 600;">Women-led, founded by psychologists with lived experience</p>
+                </div>
+                <div style="background: var(--mcf-warm-white); padding: 2rem; border-radius: 16px; border-left: 4px solid var(--mcf-orange);">
+                    <div style="font-size: 2rem; color: var(--mcf-orange); margin-bottom: 1rem;">3</div>
+                    <p style="font-weight: 600;">Kenya-registered with confirmed pilot partners from day one</p>
+                </div>
+                <div style="background: var(--mcf-warm-white); padding: 2rem; border-radius: 16px; border-left: 4px solid var(--mcf-orange);">
+                    <div style="font-size: 2rem; color: var(--mcf-orange); margin-bottom: 1rem;">4</div>
+                    <p style="font-weight: 600;">Tech built by a single father of a neurodivergent child</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Ask & Budget (SLIDE 15) -->
+    <section class="dark-section" style="padding: 5rem 0;">
+        <div class="container">
+            <h2 style="font-size: 3rem; color: white; margin-bottom: 1rem;">$100,000 Equity-Free</h2>
+            <p style="color: rgba(255,255,255,0.8); font-size: 1.25rem; margin-bottom: 2rem;">Mastercard Foundation EdTech Fellowship Kenya Cohort 4</p>
+            
+            <div class="budget-grid">
+                <div class="donut-container">
+                    <div class="donut-ring"></div>
+                    <div class="donut-center">$100K</div>
+                </div>
+                
+                <div>
+                    <div style="margin-bottom: 1rem;">
+                        <span style="color: var(--mcf-red); font-weight: 700;">35%</span> Platform development & content creation
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <span style="color: var(--mcf-orange); font-weight: 700;">25%</span> Devices & connectivity for learners
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <span style="color: var(--mcf-yellow); font-weight: 700;">20%</span> Teacher & caregiver training
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <span style="color: var(--mcf-mid-gray); font-weight: 700;">12%</span> Monitoring, evaluation & learning
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <span style="color: var(--mcf-black); font-weight: 700;">8%</span> Operations & programme management
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="color: white; font-size: 1.25rem; margin-bottom: 1rem;">Apply by April 10, 2026 · 11:59PM EAT</p>
+                <a href="#" class="btn btn-primary" style="font-size: 1.25rem; padding: 1rem 3rem;">Apply Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section style="padding: 5rem 0;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Frequently Asked Questions</h2>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-q">"You only have 30 learners — how will you scale?"</div>
+                    <div class="faq-a">Our pilot is evidence-building. With funding, we'll reach 500+ learners in Year 2 through 20 partner schools and government integration. Our tech is built for low-bandwidth, mass deployment.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">"What makes you different from other EdTech?"</div>
+                    <div class="faq-a">We're the only platform integrating neurodivergent design + KSL + caregiver support + teacher training. Most platforms serve general learners; we serve those left behind.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">"How do you measure success?"</div>
+                    <div class="faq-a">Learning outcomes (pre/post tests), engagement metrics, caregiver confidence surveys, and teacher competency assessments. All disaggregated by disability type.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">"What's your sustainability plan?"</div>
+                    <div class="faq-a">Government partnerships (inclusion in CBC), B2B with special schools, and low-cost caregiver subscriptions. 70% self-sustaining by Year 3.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section (SLIDE 16) -->
+    <section id="contact" style="padding: 5rem 0; background: var(--mcf-gradient); color: white;">
+        <div class="container" style="text-align: center;">
+            <h2 style="font-size: 3rem; color: white; margin-bottom: 1rem;">Let's Build This Together</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 3rem; opacity: 0.9;">Inclusion is not a dream. It's our mission.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 800px; margin: 0 auto;">
+                <div>
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🌐</div>
+                    <p>abilityinclusionalliance.org</p>
+                </div>
+                <div>
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">📧</div>
+                    <p>info@abilityinclusionalliance.org</p>
+                </div>
+                <div>
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">📞</div>
+                    <p>+254 774 248 350</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem;">
+                <a href="#" class="btn" style="background: white; color: var(--mcf-black); padding: 1rem 2rem;">WhatsApp Us <i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">NeuroBridge Africa</div>
+                    <p style="color: rgba(255,255,255,0.8); margin: 1rem 0;">A project of Ability Inclusion Alliance — women-led, Kenya-registered charity.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 style="color: white; margin-bottom: 1rem;">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="#problem" class="footer-link">Problem</a>
+                        <a href="#solution" class="footer-link">Solution</a>
+                        <a href="#pilot" class="footer-link">Pilot</a>
+                        <a href="#team" class="footer-link">Team</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 style="color: white; margin-bottom: 1rem;">For Funders</h4>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Investment Deck</a>
+                        <a href="#" class="footer-link">Financial Reports</a>
+                        <a href="#" class="footer-link">Theory of Change</a>
+                        <a href="#" class="footer-link">Use of Funds</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 style="color: white; margin-bottom: 1rem;">Legal</h4>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Privacy Policy</a>
+                        <a href="#" class="footer-link">Terms of Use</a>
+                        <a href="#" class="footer-link">Accessibility Statement</a>
+                        <a href="#" class="footer-link">WCAG 2.1 AA Compliant</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2026 NeuroBridge Africa · Ability Inclusion Alliance. All rights reserved. Designed by NeuroBridge Team</p>
+                <p style="margin-top: 0.5rem;">Mastercard Foundation EdTech Fellowship Applicant · iHub Kenya Cohort 4</p>
+                <p style="margin-top: 0.5rem;">Deadline: April 10, 2026 · 11:59PM EAT</p>
+            </div>
+        </div>
     </footer>
 
-    <!-- vanilla JavaScript -->
+    <!-- Fixed Elements -->
+    <a href="https://wa.me/254774248350" class="whatsapp-float" target="_blank" style="position: fixed; bottom: 90px; right: 20px; background: #25D366; color: white; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: var(--shadow-lg); z-index: 1000;"><i class="fab fa-whatsapp"></i></a>
+    
+    <a href="#" class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" style="position: fixed; bottom: 20px; right: 20px; background: var(--mcf-orange); color: white; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; box-shadow: var(--shadow-lg); z-index: 1000;"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- AI Chatbot -->
+    <div style="position: fixed; bottom: 160px; right: 20px; width: 300px; background: white; border-radius: 16px; box-shadow: var(--shadow-xl); z-index: 1000; display: none;" id="chatbot">
+        <div style="background: var(--mcf-orange); color: white; padding: 1rem; border-radius: 16px 16px 0 0; display: flex; justify-content: space-between;">
+            <span><i class="fas fa-robot"></i> NeuroBridge Assistant</span>
+            <button onclick="document.getElementById('chatbot').style.display='none'" style="background: none; border: none; color: white; cursor: pointer;">✕</button>
+        </div>
+        <div style="padding: 1rem;">
+            <p>👋 Hi! I can help with fellowship questions, pilot details, or partnership enquiries.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--mcf-mid-gray);">Deadline: April 10, 2026</p>
+            <div style="margin-top: 1rem;">
+                <a href="#" class="btn btn-primary" style="width: 100%; text-align: center;">Apply Now</a>
+            </div>
+        </div>
+    </div>
+
     <script>
-        (function() {
-            // scroll to top
-            const scrollBtn = document.getElementById('scrollTop');
-            scrollBtn.addEventListener('click', function() {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Show chatbot after 5 seconds
+        setTimeout(() => {
+            document.getElementById('chatbot').style.display = 'block';
+        }, 5000);
+        
+        // Smooth scroll for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
             });
-
-            // chatbot toggle (mock: show on whatsapp click? we'll add separate open via AI button)
-            const chatBox = document.getElementById('chatbotMock');
-            const closeChat = document.getElementById('closeChat');
-
-            // open chat after 2 seconds
-            setTimeout(() => {
-                chatBox.classList.add('show-chat');
-            }, 2000);
-
-            closeChat.addEventListener('click', function() {
-                chatBox.classList.remove('show-chat');
-            });
-
-            // mobile menu toggle alert
-            const menuToggle = document.getElementById('menuToggle');
-            menuToggle.addEventListener('click', function() {
-                alert('Navigation menu (mobile demo) — fully responsive.');
-            });
-
-            // whatsapp click
-            document.querySelector('.whatsapp-float').addEventListener('click', function() {
-                window.open('https://wa.me/254700123456?text=Hello%20NeuroBridge%20team', '_blank');
-            });
-
-            // smooth nav scrolling
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetEl = document.getElementById(targetId);
-                    if (targetEl) {
-                        targetEl.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
-            });
-
-            console.log('NeuroBridge MVP ready');
-        })();
+        });
     </script>
 </body>
 </html>
