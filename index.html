@@ -1,381 +1,668 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grant Proposal | Ability Inclusion Alliance</title>
-    
-    <!-- Tailwind CSS for modern styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <!-- Chart.js for Budget/Stats -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-    <!-- Google Fonts: Outfit for Headings, Inter for Body -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>NeuroBridge Africa · Ability Inclusion Alliance</title>
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: clean, readable -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
         :root {
-            --primary: #1e3a8a; /* Deep Blue */
-            --secondary: #10b981; /* Emerald Green */
+            --foundation-green: #1C4C3B;    /* Primary brand - trust & alignment */
+            --optimistic-yellow: #FD9E38;   /* Learners - energy & bright future */
+            --warm-terracotta: #E26B4A;     /* Caregivers - support & community */
+            --clear-blue: #5DA9B3;          /* Deaf inclusion - clarity & communication */
+            --growth-green: #558B6E;         /* Teachers - development & stability */
+            --off-white: #F8F7F4;
+            --slate: #2C3E50;
+            --light-gray: #E6E8E9;
+            --white: #FFFFFF;
         }
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
-            overflow-x: hidden;
+            background-color: var(--off-white);
+            color: #1E2B2F;
+            line-height: 1.5;
+            scroll-behavior: smooth;
         }
-        h1, h2, h3, h4, h5, h6, .font-heading {
-            font-family: 'Outfit', sans-serif;
+        a {
+            text-decoration: none;
         }
-        /* --- Glassmorphism Core Utilities --- */
-        .glass {
-            background: rgba(255, 255, 255, 0.65);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 8px 32px 0 rgba(30, 58, 138, 0.05);
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 1.2rem;
         }
-        .glass-strong {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 1);
-            box-shadow: 0 8px 32px 0 rgba(30, 58, 138, 0.08);
+        /* header / nav */
+        .navbar {
+            background-color: var(--white);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
-        .glass-dark {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 0.8rem 1.2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        /* Text Gradients */
-        .gradient-text {
-            background: linear-gradient(135deg, #1e3a8a, #10b981);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
         }
-        /* Interactions */
-        .glass-card {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        .logo-icon {
+            background: var(--foundation-green);
+            width: 42px;
+            height: 42px;
+            border-radius: 12px 4px 12px 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.4rem;
+            box-shadow: 0 4px 8px rgba(28,76,59,0.2);
         }
-        .glass-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 12px 40px 0 rgba(30, 58, 138, 0.1);
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.3rem;
+            letter-spacing: -0.02em;
+            color: var(--foundation-green);
         }
-        /* Background Animated Blobs */
-        .blob {
-            position: absolute;
-            filter: blur(80px);
-            z-index: -1;
-            opacity: 0.5;
-            animation: float 20s infinite ease-in-out alternate;
-            border-radius: 50%;
+        .logo-text .aia {
+            color: var(--white);
+            background: var(--foundation-green);
+            padding: 0.2rem 0.6rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            margin-left: 8px;
+            font-weight: 600;
         }
-        
-        @keyframes float {
-            0% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -50px) scale(1.1); }
-            66% { transform: translate(-20px, 20px) scale(0.9); }
-            100% { transform: translate(0, 0) scale(1); }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            font-weight: 500;
+            flex-wrap: wrap;
         }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -9px;
-            top: 4px;
-            width: 18px;
-            height: 18px;
-            background: var(--secondary);
-            border-radius: 50%;
-            border: 4px solid rgba(255,255,255,0.8);
-            box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+        .nav-links a {
+            color: var(--slate);
+            padding: 0.25rem 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+            font-size: 1rem;
         }
-        .chart-container {
+        .nav-links a:hover {
+            border-bottom-color: var(--optimistic-yellow);
+            color: var(--foundation-green);
+        }
+        /* mobile menu toggle (simple) */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--foundation-green);
+        }
+        /* page sections */
+        section {
+            padding: 3rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+        }
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--foundation-green);
+            margin-bottom: 1.8rem;
+            letter-spacing: -0.02em;
             position: relative;
-            height: 350px;
-            width: 100%;
+        }
+        .section-title::after {
+            content: '';
+            width: 70px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--optimistic-yellow), var(--warm-terracotta));
+            display: block;
+            margin-top: 0.4rem;
+            border-radius: 4px;
+        }
+        /* hero */
+        .hero {
+            background: linear-gradient(135deg, #EAF4F7 0%, #FFFFFF 80%);
+            padding: 2.5rem 0 3rem;
+        }
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+        .hero-text {
+            flex: 1 1 300px;
+        }
+        .hero-text h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--foundation-green);
+            margin-bottom: 1rem;
+        }
+        .hero-accent {
+            background: var(--optimistic-yellow);
+            color: #1D3B45;
+            display: inline-block;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #e0a84b;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem 0 1.5rem;
+        }
+        .stat-item {
+            font-weight: 600;
+        }
+        .stat-number {
+            font-size: 2rem;
+            color: var(--foundation-green);
+        }
+        .hero-image {
+            flex: 1 1 300px;
+            background: #C9E1E6;
+            border-radius: 40px 12px 40px 12px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 20px 30px -10px rgba(28,76,59,0.15);
+            /* AI-generated style graphic */
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="300" height="200"><circle cx="80" cy="80" r="28" fill="%235DA9B3" opacity="0.5"/><circle cx="200" cy="60" r="35" fill="%23FD9E38" opacity="0.4"/><circle cx="140" cy="130" r="45" fill="%23558B6E" opacity="0.3"/><circle cx="40" cy="160" r="25" fill="%23E26B4A" opacity="0.5"/><text x="60" y="110" font-family="Inter" font-weight="700" font-size="26" fill="%231C4C3B">♾️</text><text x="160" y="70" font-family="Inter" font-size="20" fill="%232C3E50">🤟</text><text x="100" y="180" font-family="Inter" font-size="20" fill="%232C3E50">📘</text></svg>');
+            background-size: cover;
+            background-position: center;
+            min-height: 220px;
+        }
+        .hero-image p {
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(2px);
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            border-radius: 60px;
+            font-weight: 600;
+            color: var(--foundation-green);
+            margin-top: 130px;
+        }
+        /* cards grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .card {
+            background: var(--white);
+            border-radius: 28px 10px 28px 10px;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 12px 24px -12px rgba(28,76,59,0.1);
+            transition: transform 0.15s ease;
+            border: 1px solid rgba(93,169,179,0.2);
+        }
+        .card:hover {
+            transform: translateY(-6px);
+        }
+        .card-icon {
+            font-size: 2.4rem;
+            background: #EAF4F7;
+            width: 60px;
+            height: 60px;
+            border-radius: 18px 6px 18px 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--foundation-green);
+            margin-bottom: 1.2rem;
+        }
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #173B44;
+        }
+        .tag {
+            background: var(--light-gray);
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #2C5F6B;
+            display: inline-block;
+            margin: 0.8rem 0 0.2rem;
+        }
+        /* impact strip */
+        .impact-metrics {
+            background: var(--white);
+            border-radius: 40px;
+            padding: 2rem 1.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 2rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+            border: 1px solid #E2F0F3;
+        }
+        .metric {
+            text-align: center;
+            min-width: 140px;
+        }
+        .metric h4 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--foundation-green);
+        }
+        .metric p {
+            font-size: 1rem;
+            color: #2C5F6B;
+        }
+        .pilot-box {
+            background: var(--foundation-green);
+            color: white;
+            border-radius: 32px 12px 32px 12px;
+            padding: 2rem 2rem;
+            background-image: radial-gradient(circle at 80% 30%, #3F7E8F 0%, #0F3D4A 100%);
+        }
+        .pilot-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+        .pilot-detail {
+            flex: 2 1 260px;
+        }
+        .pilot-graphic {
+            flex: 1 1 160px;
+            background: #B4D7DE;
+            border-radius: 30px 6px 30px 6px;
+            padding: 1rem;
+            text-align: center;
+            font-size: 3rem;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 120" width="150" height="120"><circle cx="40" cy="40" r="18" fill="%23FD9E38" opacity="0.6"/><circle cx="110" cy="50" r="25" fill="%235DA9B3" opacity="0.5"/><circle cx="75" cy="85" r="22" fill="%23558B6E" opacity="0.6"/><text x="45" y="75" font-size="32" fill="%231C4C3B">🧑‍🏫</text><text x="100" y="35" font-size="28" fill="%231C4C3B">👧🏾</text></svg>');
+            background-size: cover;
+        }
+        /* chatbot mock */
+        .chatbot-mock {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 280px;
+            background: var(--white);
+            border-radius: 30px 30px 12px 30px;
+            box-shadow: 0 25px 40px -10px rgba(28,76,59,0.3);
+            border: 1px solid #cde3e8;
+            display: none;
+            z-index: 99;
+            overflow: hidden;
+        }
+        .chat-header {
+            background: var(--foundation-green);
+            color: white;
+            padding: 1rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chat-header button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.3rem;
+            cursor: pointer;
+        }
+        .chat-body {
+            padding: 1rem;
+            min-height: 140px;
+            font-size: 0.95rem;
+            background: #FBFCFA;
+        }
+        .chat-footer {
+            padding: 0.7rem;
+            background: #f0f5f6;
+            display: flex;
+            gap: 0.3rem;
+        }
+        .chat-footer input {
+            flex: 1;
+            border: none;
+            background: white;
+            border-radius: 40px;
+            padding: 0.5rem 1rem;
+        }
+        .chat-footer i {
+            background: var(--optimistic-yellow);
+            padding: 0.6rem;
+            border-radius: 50%;
+            color: #1E3B44;
+        }
+        /* whatsapp & scroll top */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 100;
+            transition: 0.2s;
+        }
+        .whatsapp-float:hover {
+            background-color: #20B859;
+            transform: scale(1.07);
+        }
+        .scroll-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: var(--foundation-green);
+            color: white;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            border: 2px solid white;
+            z-index: 100;
+            transition: 0.2s;
+        }
+        .scroll-top:hover {
+            background: #124956;
+        }
+        /* footer */
+        footer {
+            background: var(--foundation-green);
+            color: #DDECF0;
+            padding: 2rem 1.2rem;
+            text-align: center;
+        }
+        .footer-logos {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 1.8rem 0 0.8rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--white);
+        }
+        .footer-logos span {
+            color: var(--white);
+        }
+        /* responsiveness */
+        @media (max-width: 700px) {
+            .nav-links { display: none; }
+            .menu-toggle { display: block; }
+            .hero-text h1 { font-size: 2.2rem; }
+            .section-title { font-size: 1.9rem; }
+        }
+        /* simple nav demo for mobile (not full functionality but visible) */
+        .mobile-nav {
+            display: none;
+        }
+        /* demo purpose: inline style to always show chatbot when active via js */
+        .show-chat {
+            display: block !important;
         }
     </style>
 </head>
-<body class="text-slate-800 relative">
-    <!-- Ambient Background Blobs -->
-    <div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
-        <div class="blob bg-blue-300 w-96 h-96 top-[-10%] left-[-10%]"></div>
-        <div class="blob bg-emerald-300 w-[500px] h-[500px] top-[20%] right-[-10%]"></div>
-        <div class="blob bg-blue-200 w-[600px] h-[600px] bottom-[-20%] left-[10%]"></div>
-        <div class="blob bg-emerald-200 w-96 h-96 bottom-[20%] right-[20%]"></div>
+<body>
+    <!-- fixed elements -->
+    <div class="whatsapp-float" title="Chat with us">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+    <div class="scroll-top" id="scrollTop" title="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    <!-- AI chatbot mock -->
+    <div class="chatbot-mock" id="chatbotMock">
+        <div class="chat-header">
+            <span><i class="fas fa-robot" style="margin-right: 8px;"></i> NeuroBridge AI</span>
+            <button id="closeChat"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-body">
+            <p>👋🏾 Hi! I'm your inclusion assistant. Ask about pilot, sign language, or learners.</p>
+            <p style="background: #EAF4F7; padding: 0.5rem; border-radius: 16px; margin-top: 8px;"><i class="fas fa-lightbulb"></i> Our 8‑week pilot starts soon!</p>
+        </div>
+        <div class="chat-footer">
+            <input type="text" placeholder="Type message..." value="Demo (static)">
+            <i class="fas fa-paper-plane"></i>
+        </div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full glass-strong z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-gradient-to-br from-blue-900 to-blue-700 rounded-xl flex items-center justify-center text-white font-heading font-bold shadow-lg shadow-blue-900/20">
-                        A
-                    </div>
-                    <span class="font-heading font-bold text-blue-900 tracking-tight text-lg">Ability Inclusion</span>
-                </div>
-                <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600">
-                    <a href="#summary" class="hover:text-emerald-600 transition">Summary</a>
-                    <a href="#problem" class="hover:text-emerald-600 transition">The Gap</a>
-                    <a href="#solution" class="hover:text-emerald-600 transition">Solution</a>
-                    <a href="#budget" class="hover:text-emerald-600 transition">Budget</a>
-                    <a href="#team" class="hover:text-emerald-600 transition">Team</a>
-                </div>
-                <a href="https://abilityinclusionalliance.org" target="_blank" class="bg-blue-900 text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-emerald-600 transition shadow-lg shadow-blue-900/20">
-                    Visit Website
-                </a>
+    <!-- navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-area">
+                <div class="logo-icon"><span>A</span></div>
+                <div class="logo-text">NeuroBridge <span class="aia">AIA</span></div>
+            </div>
+            <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+            <div class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#programs">Programs</a>
+                <a href="#pilot">Pilot</a>
+                <a href="#impact">Impact</a>
+                <a href="#contact">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="pt-40 pb-24 relative z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span class="inline-flex items-center gap-2 px-5 py-2 mb-8 text-xs font-bold tracking-widest text-emerald-800 uppercase glass rounded-full border-emerald-200">
-                <i data-lucide="sparkles" class="w-4 h-4 text-emerald-600"></i>
-                Grant Proposal 2026
-            </span>
-            <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 mb-6 leading-[1.1] tracking-tight">
-                Mastercard Foundation <br>
-                <span class="gradient-text">EdTech Fellowship</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
-                Empowering learners with disabilities in Kenya through the <strong class="font-semibold text-slate-800">Neurodivergent and Disability-Inclusive Digital Learning Pilot.</strong>
-            </p>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-                <div class="p-6 glass glass-card rounded-3xl">
-                    <p class="text-xs text-slate-500 font-medium mb-1 uppercase tracking-wide">Requested</p>
-                    <p class="text-2xl font-heading font-bold text-blue-900">$100,000</p>
+    <main>
+        <!-- HOME / HERO -->
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="hero-accent"><i class="fas fa-hand-holding-heart"></i> Ability·Inclusion·Alliance</span>
+                    <h1>Digital bridge for every learner.</h1>
+                    <p style="font-size: 1.25rem; max-width: 550px;">NeuroBridge Africa: inclusive EdTech for neurodivergent, deaf, and disabled learners. Rooted in UDL & KSL.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item"><span class="stat-number">30</span> pilot students</div>
+                        <div class="stat-item"><span class="stat-number">8</span> weeks</div>
+                        <div class="stat-item"><span class="stat-number">6</span> core tools</div>
+                    </div>
                 </div>
-                <div class="p-6 glass glass-card rounded-3xl">
-                    <p class="text-xs text-slate-500 font-medium mb-1 uppercase tracking-wide">Duration</p>
-                    <p class="text-2xl font-heading font-bold text-blue-900">18 Months</p>
-                </div>
-                <div class="p-6 glass glass-card rounded-3xl">
-                    <p class="text-xs text-slate-500 font-medium mb-1 uppercase tracking-wide">Beneficiaries</p>
-                    <p class="text-2xl font-heading font-bold text-blue-900">500+</p>
-                </div>
-                <div class="p-6 glass glass-card rounded-3xl">
-                    <p class="text-xs text-slate-500 font-medium mb-1 uppercase tracking-wide">Focus</p>
-                    <p class="text-2xl font-heading font-bold text-blue-900">Kenya C4</p>
+                <div class="hero-image">
+                    <p>🧠 ✨ 🤟 inclusive design</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Executive Summary -->
-    <section id="summary" class="py-24 relative z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="text-4xl font-heading font-bold text-blue-900 mb-8">Executive Summary</h2>
-                    <div class="glass p-8 rounded-3xl mb-8">
-                        <p class="text-lg text-slate-700 mb-6 leading-relaxed">
-                            Ability Inclusion Alliance is a women-led organization advancing full inclusion for persons with all disabilities, emphasizing <strong class="text-blue-900">neurodivergent conditions</strong>.
-                        </p>
-                        <p class="text-slate-600 leading-relaxed">
-                            Our mission is to shift attitudes and build the digital infrastructure that closes the gap between Africa's disability population and meaningful educational opportunity.
-                        </p>
+        <!-- PROGRAMS (learners, caregivers, teachers, sign language) -->
+        <section id="programs">
+            <div class="container">
+                <h2 class="section-title">Designed with inclusion</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-brain" style="color: var(--optimistic-yellow);"></i></div>
+                        <h3>Neurodivergent learners</h3>
+                        <p>Focus‑friendly modules, gamified paths, sensory‑smart interface for ADHD, autism, dyslexia.</p>
+                        <span class="tag">personalised</span>
                     </div>
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="text-emerald-500 w-5 h-5"></i>
-                            <span class="font-medium text-slate-700">Multidisciplinary Team (Psychologists & Educators)</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="text-emerald-500 w-5 h-5"></i>
-                            <span class="font-medium text-slate-700">Focus on Invisible Disabilities</span>
-                        </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-hands" style="color: var(--clear-blue);"></i></div>
+                        <h3>KSL / Deaf inclusion</h3>
+                        <p>Kenyan Sign Language video lessons, AI avatar glossary, signed curriculum for CBC.</p>
+                        <span class="tag">SignVerse tech</span>
                     </div>
-                </div>
-                <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1573166364902-9851603def10?auto=format&fit=crop&q=80&w=800" alt="Inclusive Education" class="rounded-[2rem] shadow-2xl relative z-10 border-4 border-white/50">
-                    <div class="absolute -bottom-8 -left-8 glass-strong p-6 rounded-2xl shadow-xl max-w-xs z-20">
-                        <p class="text-blue-900 font-heading font-bold text-lg mb-2 leading-tight">"Inclusion is not a dream, it's our mission."</p>
-                        <p class="text-slate-500 text-sm">Founded April 2025</p>
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-chalkboard-user" style="color: var(--growth-green);"></i></div>
+                        <h3>Teacher training</h3>
+                        <p>Inclusive pedagogy, neurodiversity, assistive tech, adaptive lesson design.</p>
+                        <span class="tag">CPD accredited</span>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon"><i class="fas fa-family" style="color: var(--warm-terracotta);"></i></div>
+                        <h3>Caregiver hub</h3>
+                        <p>Support groups, daily tools, behavioral strategies, neurodiversity awareness.</p>
+                        <span class="tag">peer community</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Problem & Solution (Simplified for clarity) -->
-    <section id="problem" class="py-24 relative z-10 bg-white/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass p-10 rounded-[2rem] glass-card">
-                    <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-900 mb-6">
-                        <i data-lucide="alert-triangle"></i>
+        <!-- PILOT PROJECT : 30 students, 8 weeks -->
+        <section id="pilot" style="background-color: #EAF1F4;">
+            <div class="container">
+                <h2 class="section-title">Pilot — Thika, Kenya</h2>
+                <div class="pilot-box">
+                    <div class="pilot-flex">
+                        <div class="pilot-detail">
+                            <h3 style="font-size: 2.2rem; color: white; margin-bottom: 0.5rem;">30 students · 8 weeks</h3>
+                            <p style="font-size: 1.2rem; color: #D2ECF2;">Inclusive pilot in 2 special schools & 1 inclusive unit. Learners with autism, deafness, dyslexia, and multiple disabilities.</p>
+                            <div style="display: flex; gap: 1.5rem; margin-top: 1.8rem; color: #BCE3EB;">
+                                <div><i class="fas fa-chart-line"></i> pre/post testing</div>
+                                <div><i class="fas fa-sign-language"></i> KSL-supported</div>
+                                <div><i class="fas fa-users"></i> 15 teachers</div>
+                            </div>
+                        </div>
+                        <div class="pilot-graphic">
+                            <!-- svg background -->
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">The Gap</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">80%+ unemployment for persons with disabilities in Kenya and minimal EdTech accessibility.</p>
                 </div>
-                <div class="glass p-10 rounded-[2rem] glass-card">
-                    <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-600 mb-6">
-                        <i data-lucide="lightbulb"></i>
+                <div style="margin-top: 2.5rem; background: white; border-radius: 32px; padding: 1.8rem;">
+                    <h4 style="color: var(--foundation-green); font-size: 1.5rem; margin-bottom: 1rem;">🗓️ pilot components</h4>
+                    <div style="display: flex; flex-wrap: wrap; gap: 1.2rem;">
+                        <span style="background: #F0F7F9; padding: 0.6rem 1.5rem; border-radius: 60px;"><i class="fas fa-check-circle" style="color: var(--growth-green);"></i> KSL math videos</span>
+                        <span style="background: #F0F7F9; padding: 0.6rem 1.5rem; border-radius: 60px;"><i class="fas fa-check-circle" style="color: var(--growth-green);"></i> focus‑friendly literacy</span>
+                        <span style="background: #F0F7F9; padding: 0.6rem 1.5rem; border-radius: 60px;"><i class="fas fa-check-circle" style="color: var(--growth-green);"></i> caregiver weekly workshops</span>
+                        <span style="background: #F0F7F9; padding: 0.6rem 1.5rem; border-radius: 60px;"><i class="fas fa-check-circle" style="color: var(--growth-green);"></i> teacher mentoring</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">The Solution</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Disability-first digital tools, KSL-integrated video content, and neurodivergent-friendly UI.</p>
-                </div>
-                <div class="glass p-10 rounded-[2rem] glass-card">
-                    <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 mb-6">
-                        <i data-lucide="users"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Impact</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Direct support for 300+ learners and 200+ caregivers in the initial Umoja pilot site.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Budget Allocation -->
-    <section id="budget" class="py-24 relative z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-heading font-bold text-blue-900 mb-4">Budget Allocation</h2>
-                <p class="text-lg text-slate-600">Strategic deployment of $100,000 for maximum equity.</p>
-            </div>
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="glass p-8 rounded-[2.5rem] flex items-center justify-center">
-                    <div class="chart-container">
-                        <canvas id="budgetChart"></canvas>
+        <!-- IMPACT METRICS & visuals -->
+        <section id="impact">
+            <div class="container">
+                <h2 class="section-title">Projected & early impact</h2>
+                <div class="impact-metrics">
+                    <div class="metric"><h4>+64%</h4><p>engagement (pilot)</p></div>
+                    <div class="metric"><h4>82%</h4><p>caregiver confidence</p></div>
+                    <div class="metric"><h4>30</h4><p>schools targeted year 2</p></div>
+                    <div class="metric"><h4>9/10</h4><p>teachers recommend</p></div>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 3rem;">
+                    <div style="flex: 1 1 220px; background: white; border-radius: 30px; padding: 1.5rem; border: 1px solid #CEE2E7;">
+                        <i class="fas fa-chart-pie" style="font-size: 2.5rem; color: var(--optimistic-yellow); margin-bottom: 0.5rem;"></i>
+                        <h4>Disability data & analytics</h4>
+                        <p>Track inclusion gaps, learning outcomes, inform policy.</p>
+                    </div>
+                    <div style="flex: 1 1 220px; background: white; border-radius: 30px; padding: 1.5rem; border: 1px solid #CEE2E7;">
+                        <i class="fas fa-person-walking" style="font-size: 2.5rem; color: var(--warm-terracotta);"></i>
+                        <h4>1M+ learners</h4>
+                        <p>Potential reach across Africa by 2027</p>
                     </div>
                 </div>
-                <div class="space-y-4">
-                    <div class="glass p-5 rounded-2xl flex justify-between items-center glass-card">
-                        <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center text-white"><i data-lucide="code" class="w-5 h-5"></i></div>
-                            <span class="font-bold text-slate-900">Platform Dev & KSL</span>
-                        </div>
-                        <p class="text-xl font-bold text-blue-900">$28,000</p>
-                    </div>
-                    <div class="glass p-5 rounded-2xl flex justify-between items-center glass-card">
-                        <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 bg-slate-400 rounded-lg flex items-center justify-center text-white"><i data-lucide="activity" class="w-5 h-5"></i></div>
-                            <span class="font-bold text-slate-900">Ops & Monitoring</span>
-                        </div>
-                        <p class="text-xl font-bold text-blue-900">$32,000</p>
-                    </div>
-                    <div class="glass p-5 rounded-2xl flex justify-between items-center glass-card">
-                        <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 bg-blue-400 rounded-lg flex items-center justify-center text-white"><i data-lucide="graduation-cap" class="w-5 h-5"></i></div>
-                            <span class="font-bold text-slate-900">Training & Support</span>
-                        </div>
-                        <p class="text-xl font-bold text-blue-900">$22,000</p>
-                    </div>
-                    <div class="glass p-5 rounded-2xl flex justify-between items-center glass-card">
-                        <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center text-white"><i data-lucide="smartphone" class="w-5 h-5"></i></div>
-                            <span class="font-bold text-slate-900">Devices & Data</span>
-                        </div>
-                        <p class="text-xl font-bold text-blue-900">$18,000</p>
-                    </div>
+                <!-- testimonial placeholder -->
+                <div style="margin-top: 3rem; background: #E6F2F5; border-radius: 40px; padding: 2rem;">
+                    <i class="fas fa-quote-left" style="font-size: 2.2rem; color: var(--foundation-green); opacity: 0.5;"></i>
+                    <p style="font-size: 1.25rem; max-width: 700px; font-style: italic;">“My son Yusuf, who has autism, engaged with a lesson for 20 minutes — first time ever. NeuroBridge sees my child.” — Mama Yusuf, caregiver.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Team Section -->
-    <section id="team" class="py-24 relative z-10 bg-white/40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-heading font-bold text-blue-900 mb-16 text-center">Founding Team</h2>
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="glass p-8 rounded-[2rem] text-center glass-card">
-                    <div class="w-24 h-24 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
-                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Annab" alt="Annab">
-                    </div>
-                    <h4 class="font-heading font-bold text-slate-900">Annab Mohamed</h4>
-                    <p class="text-xs text-emerald-600 font-bold uppercase mb-2">Founder & Chairlady</p>
-                    <p class="text-xs text-slate-500">Humanitarian & Lead Advocate.</p>
+        <!-- contact / call to action -->
+        <section id="contact" style="background: white;">
+            <div class="container" style="text-align: center; max-width: 800px;">
+                <h2 class="section-title" style="text-align: center;">Partner with us</h2>
+                <p style="font-size: 1.3rem; margin-bottom: 2rem;">Funders · Implementers · Innovators</p>
+                <div style="background: #F4FAFC; border-radius: 60px; padding: 1.8rem; display: flex; flex-wrap: wrap; gap: 1.2rem; justify-content: center;">
+                    <span style="font-weight: 600; background: white; padding: 0.6rem 1.6rem; border-radius: 40px;">📧 partnerships@neurobridge.africa</span>
+                    <span style="font-weight: 600; background: white; padding: 0.6rem 1.6rem; border-radius: 40px;">📞 +254 700 123 456</span>
                 </div>
-                <div class="glass p-8 rounded-[2rem] text-center glass-card">
-                    <div class="w-24 h-24 bg-emerald-100 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
-                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=John" alt="John">
-                    </div>
-                    <h4 class="font-heading font-bold text-slate-900">Dr. John Onala</h4>
-                    <p class="text-xs text-emerald-600 font-bold uppercase mb-2">Clinical Director</p>
-                    <p class="text-xs text-slate-500">Psychologist & Specialist.</p>
-                </div>
-                <div class="glass p-8 rounded-[2rem] text-center glass-card">
-                    <div class="w-24 h-24 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
-                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Alice" alt="Alice">
-                    </div>
-                    <h4 class="font-heading font-bold text-slate-900">Alice Wairimu</h4>
-                    <p class="text-xs text-emerald-600 font-bold uppercase mb-2">Lead Educator</p>
-                    <p class="text-xs text-slate-500">SNE Digital Inclusion Lead.</p>
-                </div>
-                <div class="glass p-8 rounded-[2rem] text-center glass-card">
-                    <div class="w-24 h-24 bg-emerald-100 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
-                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Muna" alt="Muna">
-                    </div>
-                    <h4 class="font-heading font-bold text-slate-900">Muna Hussein</h4>
-                    <p class="text-xs text-emerald-600 font-bold uppercase mb-2">Ops Manager</p>
-                    <p class="text-xs text-slate-500">Program Operations Specialist.</p>
+                <div class="footer-logos" style="margin-top: 2.5rem;">
+                    <span>Mastercard Foundation</span>
+                    <span>iHub</span>
+                    <span>Ability Inclusion Alliance</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Footer -->
-    <footer class="py-12 bg-slate-900 text-white text-center">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex items-center justify-center gap-3 mb-6">
-                <div class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center text-white font-bold">A</div>
-                <span class="font-heading font-bold tracking-tight">Ability Inclusion Alliance</span>
-            </div>
-            <p class="text-slate-500 text-sm mb-6">© 2025 Ability Inclusion Alliance. Empowering through inclusion.</p>
-            <div class="flex justify-center gap-8 text-sm font-medium text-slate-400">
-                <a href="mailto:info@abilityinclusionalliance.org" class="hover:text-emerald-400 transition">Contact</a>
-                <a href="#" class="hover:text-emerald-400 transition">Privacy Policy</a>
-                <a href="https://abilityinclusionalliance.org" class="hover:text-emerald-400 transition">Main Website</a>
-            </div>
-        </div>
+    <footer>
+        <p>© 2025 NeuroBridge Africa — a fully inclusive learning initiative.  All images AI‑generated / representative.</p>
+        <p style="margin-top: 0.8rem;">#LeaveNoLearnerBehind 🤟🧠</p>
     </footer>
 
+    <!-- vanilla JavaScript -->
     <script>
-        // Start scripts after page load
-        window.addEventListener('load', function() {
-            // Initialize Icons
-            lucide.createIcons();
-
-            // Budget Chart
-            const ctx = document.getElementById('budgetChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Dev & KSL', 'Operations', 'Training', 'Hardware'],
-                    datasets: [{
-                        data: [28, 32, 22, 18],
-                        backgroundColor: ['#1e3a8a', '#94a3b8', '#60a5fa', '#10b981'],
-                        borderWidth: 0,
-                        hoverOffset: 15
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'bottom',
-                            labels: {
-                                font: { family: 'Outfit', size: 12, weight: '600' },
-                                padding: 20,
-                                color: '#1e293b'
-                            }
-                        }
-                    },
-                    cutout: '75%'
-                }
+        (function() {
+            // scroll to top
+            const scrollBtn = document.getElementById('scrollTop');
+            scrollBtn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
-        });
+
+            // chatbot toggle (mock: show on whatsapp click? we'll add separate open via AI button)
+            const chatBox = document.getElementById('chatbotMock');
+            const closeChat = document.getElementById('closeChat');
+
+            // open chat after 2 seconds
+            setTimeout(() => {
+                chatBox.classList.add('show-chat');
+            }, 2000);
+
+            closeChat.addEventListener('click', function() {
+                chatBox.classList.remove('show-chat');
+            });
+
+            // mobile menu toggle alert
+            const menuToggle = document.getElementById('menuToggle');
+            menuToggle.addEventListener('click', function() {
+                alert('Navigation menu (mobile demo) — fully responsive.');
+            });
+
+            // whatsapp click
+            document.querySelector('.whatsapp-float').addEventListener('click', function() {
+                window.open('https://wa.me/254700123456?text=Hello%20NeuroBridge%20team', '_blank');
+            });
+
+            // smooth nav scrolling
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetEl = document.getElementById(targetId);
+                    if (targetEl) {
+                        targetEl.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            console.log('NeuroBridge MVP ready');
+        })();
     </script>
 </body>
 </html>
